@@ -255,6 +255,7 @@
 				
 				// 오늘 요일 설정	
 					var thisdate = new Date().getDay();
+					if(thisdate == 0){thisdate = 7}
 					var num ="";
 				// youtube API 불러옴
 					var tag = document.createElement('script');
