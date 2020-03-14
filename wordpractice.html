@@ -376,13 +376,16 @@
 					    $(".btn.btn-danger.toggle-on").css("font-size","18px");
 					    $(".btn.btn-danger.toggle-on").parent().children().text("1.5");
 
-					    allbutton();
-					    allbutton();
+					   /* allbutton();
+					    allbutton();*/
 					    
 					});
 
 					//글자 클릭이벤트
 					$(document).on('click', '.question' , function(){
+						
+						allbutton();
+						allbutton();
 						youTubePlayer1.pauseVideo();
 						$("#hanzi").text("");
 						$("#pinyin").text("");
