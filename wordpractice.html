@@ -513,12 +513,16 @@
 					}  
 
 					function allbutton(){
-						$(".btn.btn-primary.toggle-on").trigger("click");
-					    $(".btn.btn-success.toggle-on").trigger("click");
-					    $(".btn.btn-warning.toggle-on").trigger("click");
-					    $(".btn.btn-danger.toggle-on").trigger("click");
-					}      
-
+						setTimeout(function() {
+						  $(".btn.btn-primary.toggle-on").trigger("click");
+						}, 100);
+						setTimeout(function() {
+						  $(".btn.btn-success.toggle-on").trigger("click");
+						}, 200);
+						setTimeout(function() {
+						 $(".btn.btn-warning.toggle-on").trigger("click");
+						}, 300);
+					}
 				</script>
 			</body>
 			</html>
