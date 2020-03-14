@@ -347,10 +347,10 @@
 					    });
 
 					    //토글 1.0만 남기고 모두 닫기
-					    /*$(".btn.btn-primary.toggle-on").trigger("click");
+					    $(".btn.btn-primary.toggle-on").trigger("click");
 					    $(".btn.btn-success.toggle-on").trigger("click");
 					    $(".btn.btn-warning.toggle-on").trigger("click");
-					    $(".btn.btn-danger.toggle-on").trigger("click");*/
+					    $(".btn.btn-danger.toggle-on").trigger("click");
 					    
 
 					    //토글 칸 입력 사이즈 조정
@@ -376,6 +376,8 @@
 					    $(".btn.btn-danger.toggle-on").css("font-size","18px");
 					    $(".btn.btn-danger.toggle-on").parent().children().text("1.5");
 
+					    allbutton();
+					    allbutton();
 					    
 					});
 
@@ -505,7 +507,14 @@
 						        youTubePlayer1.setPlaybackRate(1.5);
 						        break;
 					    }    
-					}        
+					}  
+
+					function allbutton(){
+						$(".btn.btn-primary.toggle-on").trigger("click");
+					    $(".btn.btn-success.toggle-on").trigger("click");
+					    $(".btn.btn-warning.toggle-on").trigger("click");
+					    $(".btn.btn-danger.toggle-on").trigger("click");
+					}      
 
 				</script>
 			</body>
