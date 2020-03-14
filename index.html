@@ -258,6 +258,7 @@
 					var thisdate = new Date().getDay();
 					if(thisdate == 0){thisdate = 7}
 					var num ="";
+					var speedrate=1.0;
 				// youtube API 불러옴
 					var tag = document.createElement('script');
 					tag.src = "https://www.youtube.com/player_api";
@@ -342,6 +343,7 @@
 
 						youTubePlayer1.seekTo(time1, true);
 						youTubePlayer1.playVideo(); 
+						youTubePlayer1.setPlaybackRate(0.7); // set to half speed
 
 
 

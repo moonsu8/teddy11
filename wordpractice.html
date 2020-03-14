@@ -6,131 +6,143 @@
 -->
 
 <html>
-	<head>
-		<title>Teddy Chinese</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<link rel="stylesheet" href="assets/css/selectboxstyle.css" />
-		<link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
-		
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159897918-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
+<head>
+	<title>Teddy Chinese</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="assets/css/selectboxstyle.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
 
-		  gtag('config', 'UA-159897918-1');
-		</script>
+	<!------ Include the above in your HEAD tag ---------->
 
-		<style>
-			h1, h2, h3, h4, a, p, label,div{
-				  font-family: 'Jua', sans-serif;
-			}
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159897918-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
 
-			#header {
-				background-image: url("images/header1.jpg");
-			}
+		gtag('config', 'UA-159897918-1');
+	</script>
+
+	<style>
+		h1, h2, h3, h4, a, p, label,div{
+			font-family: 'Jua', sans-serif;
+		}
+
+		#header {
+			background-image: url("images/header1.jpg");
+		}
+
+		.toggle.btn{min-width:19%;min-height:40px}
+
+		.toggle-handle {
+			position: fixed;
+		}
+
+		.toggle-off.btn{padding-left:12px;}
+		.toggle-on.btn{ padding-right:12px;}
+
+	</style>
+</head>
+<body class="homepage is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header">
+
+			<!-- Inner -->
+			<div class="inner">
+				<header>
+					<h1><a href="index.html" id="logo" style="color: #fd57d9;">Teddy Chinese</a></h1>
+					<br/>
+					<!-- <hr /> -->
+					<p style="color: #ca5a98;">환락송</p>
+				</header>
+				<footer>
+					<a href="#banner" class="button circled scrolly">시 작</a>
+				</footer>
+			</div>
 
 
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="wordpractice.html">드라마로 단어암기</a></li>
+				</ul>
+			</nav>
 
-		</style>
-	</head>
-	<body class="homepage is-preload">
-		<div id="page-wrapper">
+		</div>
 
-			<!-- Header -->
-				<div id="header">
-
-					<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="index.html" id="logo" style="color: #fd57d9;">Teddy Chinese</a></h1>
-								<br/>
-								<!-- <hr /> -->
-								<p style="color: #ca5a98;">환락송</p>
-							</header>
-							<footer>
-								<a href="#banner" class="button circled scrolly">시 작</a>
-							</footer>
-						</div>
-
-					
-						<nav id="nav">
-							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li><a href="wordpractice.html">드라마로 단어암기</a></li>
-							</ul>
-						</nav>
-
-				</div>
-
-			<!-- Banner -->
-				<section id="banner">
-					<header>
-						<h2>중국어는 <strong>Teddy Chinese</strong></h2>
-						<p>
+		<!-- Banner -->
+		<section id="banner">
+			<header>
+				<h2>중국어는 <strong>Teddy Chinese</strong></h2>
+				<p>
 							<!-- A (free) responsive site template by <a href="http://html5up.net">HTML5 UP</a>.
-							Built with HTML5/CSS3 and released under the <a href="http://html5up.net/license">CCA</a> license. -->
-							단어의 레벨을 선택해 주신후 단어를 클릭해 보세요
-						</p>
-						<p>
-							중국사람들의 실제 발음을 들어보세요
-						</p>
-					</header>
-				</section>
-				<div class="wrapper style2">
+								Built with HTML5/CSS3 and released under the <a href="http://html5up.net/license">CCA</a> license. -->
+								단어의 레벨을 선택해 주신후 단어를 클릭해 보세요
+							</p>
+							<p>
+								중국사람들의 실제 발음을 들어보세요
+							</p>
+						</header>
+					</section>
+					<div class="wrapper style2">
 
-				<div class="select-box">
-			        <div class="options-container">
+						<div class="select-box">
+							<div class="options-container">
 			          <!-- <div class="option">
 			            <input type="radio" class="radio" id="automobiles"name="category"/>
 
-			          </div> -->
+			        </div> -->
 
-			          <div class="option">
-			            <input type="radio" class="radio" id="film" name="category" />
-			            <label for="film">왕기초단어 130개</label>
-			          </div>
-
-			          <div class="option">
-			            <input type="radio" class="radio" id="science" name="category" />
-			            <label for="science">기초단어 120개</label>
-			          </div>
-
-			          <div class="option">
-			            <input type="radio" class="radio" id="art" name="category" />
-			            <label for="art">초급단어 110개</label>
-			          </div>
-
-			          <div class="option">
-			            <input type="radio" class="radio" id="music" name="category" />
-			            <label for="music">중급단어 120개</label>
-			          </div>
-
-			          <div class="option">
-			            <input type="radio" class="radio" id="travel" name="category" />
-			            <label for="travel">고급단어 140개</label>
-			          </div>
-
+			        <div class="option">
+			        	<input type="radio" class="radio" id="film" name="category" />
+			        	<label for="film">왕기초단어 130개</label>
 			        </div>
 
-			        <div class="selected">
-			         단어 레벨을 선택해주세요
+			        <div class="option">
+			        	<input type="radio" class="radio" id="science" name="category" />
+			        	<label for="science">기초단어 120개</label>
 			        </div>
-     			 </div>	
- 
-	        </div>
-			<!-- Carousel -->
-				<section class="carousel">
-					<div class="reel">
 
-						<article id="wenti0">
-							<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
-							<h2 style="font-size: 50px;"></h1>
-							<h3 style="font-size: 20px;"></h1>
+			        <div class="option">
+			        	<input type="radio" class="radio" id="art" name="category" />
+			        	<label for="art">초급단어 110개</label>
+			        </div>
+
+			        <div class="option">
+			        	<input type="radio" class="radio" id="music" name="category" />
+			        	<label for="music">중급단어 120개</label>
+			        </div>
+
+			        <div class="option">
+			        	<input type="radio" class="radio" id="travel" name="category" />
+			        	<label for="travel">고급단어 140개</label>
+			        </div>
+
+			    </div>
+
+			    <div class="selected">
+			    	단어 레벨을 선택해주세요
+			    </div>
+			</div>	
+
+		</div>
+		<!-- Carousel -->
+		<section class="carousel">
+			<div class="reel">
+
+				<article id="wenti0">
+					<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
+					<h2 style="font-size: 50px;"></h1>
+						<h3 style="font-size: 20px;"></h1>
 
 							
 						</article>
@@ -138,93 +150,103 @@
 						<article id="wenti1">
 							<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
 							<h2 style="font-size: 50px;"></h1>
-							<h3 style="font-size: 20px;"></h1>
-						</article>
+								<h3 style="font-size: 20px;"></h1>
+								</article>
 
-						<article id="wenti2">
-							<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
-							<h2 style="font-size: 50px;"></h1>
-							<h3 style="font-size: 20px;"></h1>
-						</article>
+								<article id="wenti2">
+									<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
+									<h2 style="font-size: 50px;"></h1>
+										<h3 style="font-size: 20px;"></h1>
+										</article>
 
-						<article id="wenti3">
-							<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
-							<h2 style="font-size: 50px;"></h1>
-							<h3 style="font-size: 20px;"></h1>
-						</article>
+										<article id="wenti3">
+											<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
+											<h2 style="font-size: 50px;"></h1>
+												<h3 style="font-size: 20px;"></h1>
+												</article>
 
-						<article id="wenti4">
-							<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
-							<h2 style="font-size: 50px;"></h1>
-							<h3 style="font-size: 20px;"></h1>
-						</article>
+												<article id="wenti4">
+													<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
+													<h2 style="font-size: 50px;"></h1>
+														<h3 style="font-size: 20px;"></h1>
+														</article>
 
-						<article id="wenti5">
-							<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
-							<h2 style="font-size: 50px;"></h1>
-							<h3 style="font-size: 20px;"></h1>
-						</article>
+														<article id="wenti5">
+															<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
+															<h2 style="font-size: 50px;"></h1>
+																<h3 style="font-size: 20px;"></h1>
+																</article>
 
-						<article id="wenti6">
-							<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
-							<h2 style="font-size: 50px;"></h1>
-							<h3 style="font-size: 20px;"></h1>
-						</article>
+																<article id="wenti6">
+																	<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
+																	<h2 style="font-size: 50px;"></h1>
+																		<h3 style="font-size: 20px;"></h1>
+																		</article>
 
-						<article id="wenti7">
-							<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
-							<h2 style="font-size: 50px;"></h1>
-							<h3 style="font-size: 20px;"></h1>
-						</article>
+																		<article id="wenti7">
+																			<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
+																			<h2 style="font-size: 50px;"></h1>
+																				<h3 style="font-size: 20px;"></h1>
+																				</article>
 
-						<article id="wenti8">
-							<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
-							<h2 style="font-size: 50px;"></h1>
-							<h3 style="font-size: 20px;"></h1>
-						</article>
+																				<article id="wenti8">
+																					<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
+																					<h2 style="font-size: 50px;"></h1>
+																						<h3 style="font-size: 20px;"></h1>
+																						</article>
 
-						<article id="wenti9">
-							<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
-							<h2 style="font-size: 50px;"></h1>
-							<h3 style="font-size: 20px;"></h1>
-						</article>
+																						<article id="wenti9">
+																							<h1 style="font-size: 60px;"><a href="#none" class="question"></a></h1>
+																							<h2 style="font-size: 50px;"></h1>
+																								<h3 style="font-size: 20px;"></h1>
+																								</article>
 
-					</div>
-				</section>
-				<br/>
-			<!-- Main -->
-				<div class="wrapper style2">
+																							</div>
+																						</section>
+																						<br/>
+																						<!-- Main -->
+																						<div class="wrapper style2">
 
-					<article id="main" class="container special">
-						<div id="youTubePlayer1"></div><!-- 플레이어를 불러올 영역-->
-						<br/>
-						<br/>
-						<!-- <a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a> -->
-						<!-- <a href="#" class="button">답 체크 및 반복하기</a> -->
+																							<article id="main" class="container special">
+																								<div id="youTubePlayer1"></div><!-- 플레이어를 불러올 영역-->
+																								<br/>
+																								<br/>
+																								<!-- <a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a> -->
+																								<!-- <a href="#" class="button">답 체크 및 반복하기</a> -->
 
-						<h3><a id="movieon" href="#none" class="button">답 체크 및 반복듣기</a></h3>
-						<br/>
-						<header>
-							<h2 id ="hanzi"></h2>
-							<p id ="pinyin"></p>
-							<p id ="jieshi"></p>
-						</header>
-						<p id ="shuoming">
+																								<h3><a id="movieon" href="#none" class="button">▶▶▶반복 재생▶▶▶</a></h3>
+																								<br/>
+																								<div style="width: 100%;">
+																									<input type="checkbox" checked data-toggle="toggle" data-onstyle="primary" id = "0.5배속">
+																									<input type="checkbox" checked data-toggle="toggle" data-onstyle="success" id = "0.7배속">
+																									<input type="checkbox" checked data-toggle="toggle" data-onstyle="info" id = "1.0배속">
+																									<input type="checkbox" checked data-toggle="toggle" data-onstyle="warning" id = "1.2배속">
+																									<input type="checkbox" checked data-toggle="toggle" data-onstyle="danger" id = "1.5배속">	
+																								</div>
 
-						</p>
-						
-					</article>
 
-				</div>
 
-			<!-- Footer -->
-				<div id="footer">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
+																								<header>
+																									<h2 id ="hanzi"></h2>
+																									<p id ="pinyin"></p>
+																									<p id ="jieshi"></p>
+																								</header>
+																								<p id ="shuoming">
 
-								<!-- Contact -->
-									<section class="contact">
+																								</p>
+
+																							</article>
+
+																						</div>
+
+																						<!-- Footer -->
+																						<div id="footer">
+																							<div class="container">
+																								<div class="row">
+																									<div class="col-12">
+
+																										<!-- Contact -->
+																										<section class="contact">
 										<!-- <header>
 											<h3>중국어를 더 많이 배우고 싶으시다면?</h3>
 										</header>
@@ -239,62 +261,64 @@
 										</ul>
 									</section>
 
-								<!-- Copyright -->
+									<!-- Copyright -->
 									<div class="copyright">
 										<ul class="menu">
 											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 										</ul>
 									</div>
 
-							</div>
+								</div>
 
+							</div>
 						</div>
 					</div>
+
 				</div>
 
-		</div>
+				<!-- Scripts -->
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/jquery.dropotron.min.js"></script>
+				<script src="assets/js/jquery.scrolly.min.js"></script>
+				<script src="assets/js/jquery.scrollex.min.js"></script>
+				<script src="assets/js/browser.min.js"></script>
+				<script src="assets/js/breakpoints.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<script src="assets/js/main.js"></script>
+				<script src="assets/js/hskdb.js"></script>
+				<script src="assets/js/selectboxstyle.js"></script>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/hskdb.js"></script>
-			<script src="assets/js/selectboxstyle.js"></script>
-			<!-- <script src="assets/js/alldata.js"></script> -->
-			<script type="text/javascript">
-				
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+				<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script> 
+
+				<script type="text/javascript">
+
 				// 오늘 요일 설정	
-					var thisdate = new Date().getDay();
-					if(thisdate == 0){thisdate = 7}
+				var thisdate = new Date().getDay();
+				if(thisdate == 0){thisdate = 7}
 					var num ="";
-					var hskdata;
-					var number1;
-					var lefttime;
-					var righttime;
+				var hskdata;
+				var number1;
+				var xianzaitoggle = ".btn.btn-info.toggle-on";
 				// youtube API 불러옴
-					var tag = document.createElement('script');
-					tag.src = "https://www.youtube.com/player_api";
-					var firstScriptTag = document.getElementsByTagName('script')[0];
-					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				var tag = document.createElement('script');
+				tag.src = "https://www.youtube.com/player_api";
+				var firstScriptTag = document.getElementsByTagName('script')[0];
+				firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 					// 플레이어변수 설정
 					var youTubePlayer1;
 
 					function onYouTubeIframeAPIReady() {
-					    youTubePlayer1 = new YT.Player('youTubePlayer1', {
-					        width: '100%',
-					       /* height: '563',*/
-					        videoId: '7HdgInIQxqY',
+						youTubePlayer1 = new YT.Player('youTubePlayer1', {
+							width: '100%',
+							/* height: '563',*/
+							videoId: '7HdgInIQxqY',
 					        playerVars: {rel: 0},//추천영상 안보여주게 설정
 					        events: {
 					          'onReady': onPlayerReady, //로딩할때 이벤트 실행
 					          'onStateChange': onPlayerStateChange //플레이어 상태 변화시 이벤트실행
-					        }
+					      }
 					    });//youTubePlayer1셋팅
 					}
 
@@ -304,98 +328,183 @@
 					}
 
 					function onPlayerStateChange(event) {
-					    if (event.data == YT.PlayerState.PLAYING) {
+						if (event.data == YT.PlayerState.PLAYING) {
 					        //플레이어가 재생중일때 작성한 동작이 실행된다.
 					    }
-					  }
-					 
-					$(document).ready(function () {
-					    
-					$('#button55').dropotron({ 
-										/*offsetY: -10*/ // Nudge up submenus by 10px to account for padding
-									});
-					    /*$('button').click(function(){
-							$('ul').toggleClass('active')
-						})*/
+					}
 
-					    $(".btn_play").on("click", function () {
+					$(document).ready(function () {
+
+
+						$(".btn_play").on("click", function () {
 					        youTubePlayer1.playVideo();//재생
 					    });
-					    $(".btn_stop").on("click", function () {
+						$(".btn_stop").on("click", function () {
 					        youTubePlayer1.stopVideo();//정지
 					    });
-					    $(".btn_pause").on("click", function () {
+						$(".btn_pause").on("click", function () {
 					        youTubePlayer1.pauseVideo();//일시정지
 					    });
 
+					    //토글 칸 입력 사이즈 조정
+					    $(".btn.btn-primary.toggle-on").text("0.5");
+					    $(".btn.btn-primary.toggle-on").css("font-size","18px");
+					    $(".btn.btn-default.active.toggle-off").css("font-size","18px");
+					    $(".btn.btn-primary.toggle-on").parent().children().text(0.5);
+
+
+					    $(".btn.btn-success.toggle-on").text("0.7");
+					    $(".btn.btn-success.toggle-on").css("font-size","18px");
+					    $(".btn.btn-success.toggle-on").parent().children().text("0.7");
+
+					    $(".btn.btn-info.toggle-on").text("1.0");
+					    $(".btn.btn-info.toggle-on").css("font-size","18px");
+					    $(".btn.btn-info.toggle-on").parent().children().text("1.0");
+
+					    $(".btn.btn-warning.toggle-on").text("1.2");
+					    $(".btn.btn-warning.toggle-on").css("font-size","18px");
+					    $(".btn.btn-warning.toggle-on").parent().children().text("1.2");
+
+					    $(".btn.btn-danger.toggle-on").text("1.5");
+					    $(".btn.btn-danger.toggle-on").css("font-size","18px");
+					    $(".btn.btn-danger.toggle-on").parent().children().text("1.5");
+
+					    //토글 1.0만 남기고 모두 닫기
+					    $(".btn.btn-primary.toggle-on").trigger("click");
+					    $(".btn.btn-success.toggle-on").trigger("click");
+					    $(".btn.btn-warning.toggle-on").trigger("click");
+					    $(".btn.btn-danger.toggle-on").trigger("click");
 					});
 
-					//클릭이벤트
+					//글자 클릭이벤트
 					$(document).on('click', '.question' , function(){
 						youTubePlayer1.pauseVideo();
 						$("#hanzi").text("");
 						$("#pinyin").text("");
- 						$("#jieshi").text("");
+						$("#jieshi").text("");
 
 						fnMove();
 
 						number1 = $(this).attr("id");
-						$("#hanzi").text(hskdata[number1][1]);
-						$("#pinyin").text(hskdata[number1][2]);
- 						$("#jieshi").text(hskdata[number1][3]);
+
+						//한자 및 병음에 색깔 넣기
+						//한자
+						var hanzitag ="<span style='color:#5712ff'>" + hskdata[number1][4] + "</span>";
+						var colorhanzi = hskdata[number1][1].replace(hskdata[number1][4], hanzitag);
+						//병음
+						var pinyin1 = (hskdata[number1][5].slice(0,-1)).substr(1);
+						var pinyintag ="<span style='color:#5712ff'>" + pinyin1 + "</span>";
+						var colorpinyin = hskdata[number1][2].replace(pinyin1, pinyintag);
+
+						/*$("#hanzi").text(hskdata[number1][1]);*/
+						/*$("#pinyin").text(hskdata[number1][2]);*/
+						$("#hanzi").html(colorhanzi);
+						$("#pinyin").html(colorpinyin);
+						$("#jieshi").text(hskdata[number1][3]);
 
 
 					});
 
- 					$("#movieon").click(function(){
+					//반복듣기 버튼 클릭 이벤트 
+					$("#movieon").click(function(){
 
- 						var time = hskdata[number1][0];
-						var time1 = Number(time.substring(0,2)*60) + Number(time.substr(3,2));
+						var time = hskdata[number1][0];
+						var time1 = Number(time.substring(0,2)*60) + Number(time.substr(3,2)) -1;
 
 						youTubePlayer1.seekTo(time1, true);
-						youTubePlayer1.playVideo(); 
- 					})
 
- 					function fnMove(){
-				        var offset = $("#youTubePlayer1").offset();
-				        $('html, body').animate({scrollTop : offset.top}, 1200);
-				    }
+						speedrate();
+
+						youTubePlayer1.playVideo(); 
+					})
+
+
+
+					$(document).ready(function() {
+						//처음 버튼 비활성화 
+						$(".btn.btn-info.toggle-on").parent().parent().attr("style","pointer-events: none")
+						
+
+						$(document).on('click', '.btn.btn-default.active.toggle-off' , function(e){ 
+							//현재 on 되어있는 버튼을 활성화 
+							$(xianzaitoggle).parent().parent().attr("style","pointer-events: auto");
+
+							var aaa = $(this).parent().children().first().attr("class");
+							var c = "." + aaa.replace(/ /gi, ".");
+
+							/*if(aaa == xianzaitoggle){
+								$(xianzaitoggle).trigger("click");
+							}*/
+							$(xianzaitoggle).trigger("click");
+
+							xianzaitoggle = c; 
+							//현재 on 되어있는 버튼을 비활성화 
+							$(xianzaitoggle).parent().parent().attr("style","pointer-events: none");
+						})
+
+
+
+						
+				})
+
+
+					function fnMove(){
+						var offset = $("#youTubePlayer1").offset();
+						$('html, body').animate({scrollTop : offset.top}, 1200);
+					}
 				    //selectboxstyle.js에서 함수를 호출한다.
 				    function hskciyu(){
 				    	var dengji = $(".selected").text();
 				    	switch (dengji){
-									    case "왕기초단어 130개": hskdata= hsk1data;
-									        break;
-									    case "기초단어 120개" : hskdata = hsk2data;
-									        break;
-									    case "초급단어 110개" : hskdata= hsk3data;
-									        break;
-									    case "중급단어 120개" : hskdata= hsk4data;
-									        break;
-									    case "고급단어 140개" : hskdata= hsk5data;
-									        break;
-									}
-						
+				    		case "왕기초단어 130개": hskdata= hsk1data;
+				    		break;
+				    		case "기초단어 120개" : hskdata = hsk2data;
+				    		break;
+				    		case "초급단어 110개" : hskdata= hsk3data;
+				    		break;
+				    		case "중급단어 120개" : hskdata= hsk4data;
+				    		break;
+				    		case "고급단어 140개" : hskdata= hsk5data;
+				    		break;
+				    	}
+
 						//10개의 랜덤값을 추출하여 캐러실 구성
 						for(var i=0; i<10; i++) {
-						
-						let myRandom = Math.floor(Math.random() * (hskdata.length -1 + 1)) + 1;
-						
-						var a = "#" + "wenti" + i;
 
-						$(a).children('h1').children('a').text(hskdata[myRandom][4]);
-						$(a).children('h1').children('a').attr("id",myRandom);
-						$(a).children('h2').text(hskdata[myRandom][5]);
-						$(a).children('h3').text(hskdata[myRandom][6]);
+							let myRandom = Math.floor(Math.random() * (hskdata.length -1 + 1)) + 1;
+
+							var a = "#" + "wenti" + i;
+
+							$(a).children('h1').children('a').text(hskdata[myRandom][4]);
+							$(a).children('h1').children('a').attr("id",myRandom);
+							$(a).children('h2').text(hskdata[myRandom][5]);
+							$(a).children('h3').text(hskdata[myRandom][6]);
 						}
+					}
 
-							
+					function speedrate(){
+						switch (xianzaitoggle){
+						    case ".btn.btn-primary.toggle-on" :
+						        youTubePlayer1.setPlaybackRate(0.5);
 
-				   	}
 
+						        break;
+						    case ".btn.btn-success.toggle-on" :
+						        youTubePlayer1.setPlaybackRate(0.7);
+						        break;
+						    case ".btn.btn-info.toggle-on" :
+						        youTubePlayer1.setPlaybackRate(1.0);
+						        break;
+						    case ".btn.btn-warning.toggle-on" :
+						        youTubePlayer1.setPlaybackRate(1.2);
+						        break;
+						    case ".btn.btn-danger.toggle-on" :
+						        youTubePlayer1.setPlaybackRate(1.5);
+						        break;
+					    }    
+					}        
 
-
-			</script>
-	</body>
-</html>
+				</script>
+			</body>
+			</html>
 
