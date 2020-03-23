@@ -198,13 +198,39 @@
                 </div>
             </div>
             <!-- row -->
+            <div class="container-fluid">
+                <div class="row">
+            <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">1.성조선택</h4>
+                                <div class="basic-form">
+                                    <form>
+                                        <div class="form-row align-items-center">
+                                            <div class="col-auto my-1">
+                                                <label class="mr-sm-2">성조를 선택하신후 아래 병음 버튼 클릭!</label>
+                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                                    <option selected="selected">Choose...</option>
+                                                    <option value="1">1성</option>
+                                                    <option value="2">2성</option>
+                                                    <option value="3">3성</option>
+                                                    <option value="4">4성</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+</div></div>
 
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Accordion</h4>
+                                <h4 class="card-title">2.병음선택</h4>
                                 <p class="text-muted"><code></code>
                                 </p>
                                 <div id="accordion-one" class="accordion">
@@ -1315,7 +1341,21 @@
     <script src="js/settings.js"></script>
     <script src="js/gleek.js"></script>
     <script src="js/styleSwitcher.js"></script>
+    <script type="text/javascript">
 
+        $(".mb-1").click(function(){
+                        var b = $("#inlineFormCustomSelect").val();
+                        var a = ($(this).text()).trim();
+
+
+
+
+                        var c = "./sound/"+ a + b +".mp3";
+
+                        var alertSound = new Audio(c); // 오디오 객체 생성
+                        alertSound.play();
+                    })
+    </script>
 </body>
 
 </html>

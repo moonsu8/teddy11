@@ -15,14 +15,15 @@
     <link rel="stylesheet" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
     <!-- Custom Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <!-- 추가건 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
     <style>
             h1, h2, h3, h4, a, p, span, li{
                   font-family: 'Jua', sans-serif;
             }
-        </style>
-
+    </style>
+    <!-- 추가건 끝 -->
 </head>
 
 <body>
@@ -167,7 +168,7 @@
                             <i class="fas fa-vihara"></i><span class="nav-text">유정씨를 위한</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./layout-blank.html">병음 성조연습</a></li>
+                            <li><a href="./pinyinmp3.html">병음 성조연습</a></li>
                         </ul>
                     </li>
 
@@ -187,7 +188,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-1">
-                            <div class="card-body">
+                            <div class="card-body" id = "pinyinmp3">
                                 <h3 class="card-title text-white">중국어 왕기초를 위한 </h3>
                                 <div class="d-inline-block">
                                     <h2 class="text-white">성조 병음 듣기</h2>
@@ -287,6 +288,19 @@
 
 
     <script src="./js/dashboard/dashboard-1.js"></script>
+
+    <script type="text/javascript">
+
+    $(document).on('click', '.pinyinmp3' , function(){
+                        
+                        document.id.action="./pinyinmp3.html";
+
+                    document.id.submit();
+
+                        
+                    });
+
+</script>
 
 </body>
 
