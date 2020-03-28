@@ -180,6 +180,9 @@
                         <ul aria-expanded="false">
                             <li><a href="./juzimovie.html">드라마 섀도잉</a></li>
                         </ul>
+                        <ul aria-expanded="false">
+                            <li><a href="./moviecollection.html">인기 중드 감상</a></li>
+                        </ul>
                     </li>
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -197,7 +200,7 @@
                             <i class="fas fa-hat-wizard"></i><span class="nav-text">남형씨를 위한</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./juzimovie.html">인기 중드 감상</a></li>
+                            <li><a href="./moviecollection.html">인기 중드 감상</a></li>
                         </ul>
                     </li>
                     <li class="mega-menu mega-menu-sm">
@@ -485,7 +488,7 @@
                         time = 0;
                         var time1 =  Number(dianying[num][0].substr(0, 2));
                         var time2 =  Number(dianying[num][0].substr(3, 2));
-                        time = time1*60 + time2;
+                        time = time1*60 + time2 -1;
 
                         var url = "https://www.youtube.com/embed/" + dianying[num][5] + "?rel=0&enablejsapi=1&widgetid=1";
                         youTubePlayer1.f.src = url;
