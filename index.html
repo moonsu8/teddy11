@@ -209,6 +209,18 @@
             <div class="container-fluid mt-3">
                 <div class="row">
                     <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-5">
+                            <div class="card-body" id = "moviecollection">
+                                <h3 class="card-title text-white">모두를 위한</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white">인기 중드 감상</h2>
+                                    <p class="text-white mb-0">Teddy CHINESE</p>
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-1">
                             <div class="card-body" id = "pinyinmp3">
                                 <h3 class="card-title text-white">중국어 왕기초를 위한 </h3>
@@ -223,9 +235,9 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-2">
                             <div class="card-body" id = "pinyinautomp3">
-                                <h3 class="card-title text-white">중국어 발음연습을 위한</h3>
+                                <h3 class="card-title text-white">중국어 왕기초를 위한</h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">병음 무한반복</h2>
+                                    <h2 class="text-white">병음 무한반복 듣기</h2>
                                     <p class="text-white mb-0">Teddy CHINESE</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
@@ -233,21 +245,21 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-3">
-                            <div class="card-body"id = "moviecidian">
-                                <h3 class="card-title text-white">스크린중국어를 위한</h3>
+                        <div class="card gradient-7">
+                            <div class="card-body" id = "pinyinquiz1">
+                                <h3 class="card-title text-white">중국어 왕기초를 위한</h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">영화로 단어검색</h2>
+                                    <h2 class="text-white">중국어 병음 퀴즈</h2>
                                     <p class="text-white mb-0">Teddy CHINESE</p>
                                 </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-4">
                             <div class="card-body" id = "juzimovie">
-                                <h3 class="card-title text-white">중국어 회화를 위한</h3>
+                                <h3 class="card-title text-white">중급 중국어를 위한</h3>
                                 <div class="d-inline-block">
                                     <h2 class="text-white">중국영화 섀도잉</h2>
                                     <p class="text-white mb-0">Teddy CHINESE</p>
@@ -256,18 +268,20 @@
                             </div>
                         </div>
                     </div>
-                     <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-5">
-                            <div class="card-body" id = "moviecollection">
-                                <h3 class="card-title text-white">스크린중국어를 위한</h3>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-3">
+                            <div class="card-body"id = "moviecidian">
+                                <h3 class="card-title text-white">고급 중국어를 위한</h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">인기 중드 감상</h2>
+                                    <h2 class="text-white">영화로 단어검색</h2>
                                     <p class="text-white mb-0">Teddy CHINESE</p>
                                 </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
                             </div>
                         </div>
                     </div>
+                     
+                    
                       
                     <!--<div class="col-lg-3 col-sm-6">
                         <div class="card gradient-6">
@@ -373,6 +387,12 @@
     $(document).on('click', '#moviecollection' , function(){
                         
                     location.href="./moviecollection.html";
+                        
+                    });
+    
+    $(document).on('click', '#pinyinquiz1' , function(){
+                        
+                    location.href="./pinyinquiz1.html";
                         
                     });
 
