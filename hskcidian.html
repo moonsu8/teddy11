@@ -559,7 +559,7 @@
                         <div class="modal-content" style="height: 80%;">
                             <div class="modal-header">
                                 <h5 class="modal-title">중드 대본 검색</h5>
-                                <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                <button type="button" class="close" onclick="stopyoutube()" data-dismiss="modal"><span>&times;</span>
                                 </button>
                             </div>
                             <!-- <div class="modal-body">Modal body text goes here.</div> -->
@@ -631,7 +631,7 @@
                                     </table>
                                 </div>
                                 <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="stopyoutube()" data-dismiss="modal">Close</button>
                                 <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                             </div>
                             </div>
@@ -1039,7 +1039,11 @@
                                 );
                             }                                
                         }
-                        //테이블 자료 세팅 함수끝                                              
+                        //테이블 자료 세팅 함수끝
+
+                        function stopyoutube(){
+                            youTubePlayer1.stopVideo();
+                        }                                              
             </script>
 
 </body>
