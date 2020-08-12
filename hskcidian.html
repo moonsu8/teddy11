@@ -870,7 +870,10 @@
 
                     //단어검색 클릭이벤트                   
                     $(document).on('click', '.hskyoutube' , function(){    
-
+                        
+                        $("#pinyin").text("");
+                        $("#hanzi").text("");
+                        $("#jieshi").text("");
                         var ciyu = $(this).text();
                         
                         youTubePlayer1.stopVideo();
