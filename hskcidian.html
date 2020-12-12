@@ -800,7 +800,8 @@
                         time = time1*60 + time2 -1;
 
                         var url = "https://www.youtube.com/embed/" + dianying[num][5] + "?rel=0&enablejsapi=1&widgetid=1";
-                        youTubePlayer1.f.src = url;
+                       // youTubePlayer1.f.src = url;
+                       $("#youTubePlayer1").attr("src",url);
                         setTimeout(function() {
                               youTubePlayer1.seekTo(time, true);
                         youTubePlayer1.playVideo(); 
