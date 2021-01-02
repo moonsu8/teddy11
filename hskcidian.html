@@ -313,13 +313,13 @@
                                         <col width="30%" />
                                         <col width="20%" />
                                         <col width="30%" />
-                                        <col width="10%" />
+                                        <!-- <col width="10%" /> -->
                                         <thead>
                                             <tr>
-                                                <th>No</th>
-                                                <th><input type="checkbox" class="form-check-input ShowHide" value="중문" style="margin: 0 auto;"/></th>
-                                                <th><input type="checkbox" class="form-check-input ShowHide" value="병음"style="margin: 0 auto;"/></th>
-                                                <th><input type="checkbox" class="form-check-input ShowHide" value="뜻"style="margin: 0 auto;"/></th>
+                                                <th id = "noAtoB"></th>
+                                                <th><input type="checkbox" class="form-check-input ShowHide" value="중문" style="margin: 0 auto; margin-top: -2%;"/></th>
+                                                <th><input type="checkbox" class="form-check-input ShowHide" value="병음"style="margin: 0 auto; margin-top: -2%;"/></th>
+                                                <th><input type="checkbox" class="form-check-input ShowHide" value="뜻"style="margin: 0 auto; margin-top: -2%;"/></th>
                                             </tr>
                                         </thead>
                                         <tbody id="tablecontent">
@@ -665,7 +665,7 @@
                         $("#pinyin").text("");
                         $("#hanzi").text("");
                         $("#jieshi").text("");
-                        var ciyu = $(this).text();
+                        var ciyu = $(this).attr('value');
                         
                         youTubePlayer1.stopVideo();
                         $("#tablecontent1").empty();
@@ -720,6 +720,8 @@
 
                         paging(totalData, dataPerPage, pageCount, currentPage);
                         tableset(aaa, 0, 9);
+                        $("#noAtoB").text('0 ~ 10');
+
 
                         // 
 
@@ -765,6 +767,8 @@
                          if($id != "Next" && $id != "Prev"){
                         tableset(aaa, stnum, endnum);
                         }
+
+                        $("#noAtoB").text(String(stnum + 1) + ' ~ '  + String(endnum + 1));
 
                        //pagingnum 클릭이벤트 끝 
 
@@ -819,6 +823,7 @@
                         $("#paging a#" + currentPage).css({"text-decoration":"none", 
                                                            "color":"red", 
                                                            "font-weight":"bold"});*/
+                        $("#noAtoB").text(first + ' ~ ' + last);                                   
                         } 
                         //페이징처리 함수 끝
 
@@ -830,21 +835,45 @@
                         var bbb = "hsk" + aaa;
 
                         for (var i = stnum; i < endnum+1; i++) {
-                                
+                            var ccc = "";    
                             //youtube가 존재하면 색깔을 다르게 함
+                            for (var j = 0; j < dianying.length; j++) {
+                                if(dianying[j][1].indexOf(eval(bbb)[i][2])!= -1){
+                                    ccc = '<tr>' +
+
+                                          '<td style="font-size: 20px;text-align: center;">' + '<a href="#none" class= "hskyoutube" data-toggle="modal" data-target=".bd-example-modal-lg" value="' + eval(bbb)[i][2] + '">'
+                                          + '<span class="badge badge-primary px-2"><i class="fab fa-youtube"></i></span></a></td>';
+
+                                    /*$("#tablecontent1").append(
+                                        '<tr>' +
+                                        '<td>' + dianying[i][1] + '</td>' +
+                                        '<td>' + dianying[i][3] + '</td>' +
+                                        '<td>' + '<a id="playbutton" value="' + i + '">'
+                                        + '<span class="badge badge-primary px-2"><i class="fab fa-youtube"></i></span></a></td>' +
+                                        '<tr>'
+                                        );*/
+
+
+                                    break;   
+                                } else {
+                                    ccc = '<tr>' + '<td></td>';  
+                                }
+                            }
+
 
                             $("#tablecontent").append(
-                                '<tr>' +
-                                '<td style="font-size: 20px;text-align: center;"><span>' + eval(bbb)[i][0] + '</span></td>' +
+                                /*'<tr>' +
+                                '<td style="font-size: 20px;text-align: center;"><span>' + eval(bbb)[i][0] + '</span></td>' +*/
+                                ccc+
                                 '<td style="font-size: 20px;text-align: center;"><span class ="hanzi_tab">' +
-                                '<a href="#none" class= "hskyoutube"  data-toggle="modal" data-target=".bd-example-modal-lg" value="' + i + '">' +
-                                eval(bbb)[i][2] + '</a></span></td>' +
+                                
+                                eval(bbb)[i][2] + '</span></td>' +
                                 '<td style="font-size: 20px;text-align: center;"><span class ="pinyin_tab"><a href="#none" class="hskmp3" value="' +
                                 eval(bbb)[i][2] + '">' + eval(bbb)[i][3] + '</a></span></td>' +
                                 '<td style="font-size: 20px;text-align: center;"><span class ="yisi_tab">' + eval(bbb)[i][4] + '</span></td>' +
                                 /*'<td style="font-size: 20px;text-align: center;">' + '<a href="#none" id="playbutton"  data-toggle="modal" data-target=".bd-example-modal-lg" value="' + i + '">'
                                 + '<span class="badge badge-primary px-2"><i class="fab fa-youtube"></i></span></a></td>' +*/
-                                '<tr>'
+                                '</tr>'
                                 );
                             }                                
                         }
