@@ -497,6 +497,9 @@
             Content body start
         ***********************************-->
         <div class="content-body">
+
+        <input type="text" id="moveurl" display="none" hidden="true">
+
         </br></br>
          <div class="footer" style="margin-bottom: 30px;">
             <div class="copyright">
@@ -661,16 +664,16 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form>
+                                                    
                                                         <div class="form-group">
                                                             <label for="recipient-name" class="col-form-label">비밀번호:</label>
-                                                            <input type="text" class="form-control" id="password">
+                                                            <input type="text" class="form-control" id="password" onkeypress="if( event.keyCode == 13 ){checkpassword();}">
                                                         </div>
                                                         <!-- <div class="form-group">
                                                             <label for="message-text" class="col-form-label">Message:</label>
                                                             <textarea class="form-control" id="message-text"></textarea>
                                                         </div> -->
-                                                    </form>
+                                                 
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -739,10 +742,10 @@
                         
                     /*var a = "./" + $(this).attr("id") + ".html" ;
                     $("#passcheck").attr("num",a);*/
-                     $("#passcheck").attr("num",$(this).attr("id"));    
+                     $("#moveurl").attr("num",$(this).attr("id"));    
                     }); 
 
-    $(document).on('click', '#passcheck' , function(){
+   /* $(document).on('click', '#passcheck' , function(){
                         
                     if( $("#password").val() == fulldate){
                         var a = "./" + $(this).attr("num") + ".html" ;
@@ -757,71 +760,43 @@
                         return false;
                     }
                                     
-                    });
-    $(document).on('click', '#moviecollection' , function(){
-                        
-                    location.href="./moviecollection.html";
-                        
-                    });
-
-    /*$(document).on('click', '#pinyinmp3' , function(){
-                        
-                    location.href="./pinyinmp3.html";
-                        
-                    });
-    $(document).on('click', '#pinyinautomp3' , function(){
-                        
-                    location.href="./pinyinautomp3.html";
-                        
-                    });
-    $(document).on('click', '#moviecidian' , function(){
-                        
-                    location.href="./moviecidian.html";
-                        
-                    });
-    $(document).on('click', '#juzimovie' , function(){
-                        
-                    location.href="./juzimovie.html";
-                        
-                    });
-    $(document).on('click', '#moviecollection' , function(){
-                        
-                    location.href="./moviecollection.html";
-                        
-                    });
-    
-    $(document).on('click', '#pinyinquiz1' , function(){
-                        
-                    location.href="./pinyinquiz1.html";
-                        
-                    });
-    $(document).on('click', '#pinyin2' , function(){
-
-    
-                        
-                    location.href="./pinyin2.html";
-                        
-                    });
-    $(document).on('click', '#hskcidian' , function(){
-                        
-                    location.href="./hskcidian.html";
-                        
-                    });
-
-    
-    $(document).on('click', '#100tianmp3' , function(){
-                        
-                    location.href="./100tianmp3.html";
-                        
                     });*/
 
-    /*var div1 = document.getElementById("a1");
+    $(document).on('click', '#passcheck' , function(){
+                        
+                    if(checkpassword() == false){
+                        return;
+                    }           
+    });
+                                    
+    $(document).on('click', '#moviecollection' , function(){
+                        
+                    location.href="./moviecollection.html";
+                        
+                    });
 
-    div1.addEventListener('click', function (event) {
+    function checkpassword(){
+         if( $("#password").val() == fulldate){
+                    var a = "./" + $("#moveurl").attr("num") + ".html" ;  
 
-    console.log(' hello ~ ');   
+                    setTimeout(function() {
+                          location.href = a;
+                        }, 1500);
 
-  });*/
+                        
+                    }  else {
+                        alert("비밀번호를 확인해주세요.");
+                        return false;
+                    }
+
+    }
+
+/*   function enterkey() {
+         if (window.event.keyCode == 13) { 
+            checkpassword();
+        }
+    }*/
+
 
 
 

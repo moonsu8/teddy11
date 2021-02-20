@@ -352,7 +352,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                <div id="youtubemodal"class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-lg" style="height: 80%;">
                         <div class="modal-content" style="height: 80%;">
                             <div class="modal-header">
@@ -438,6 +438,49 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- 한자설명 유투브 모달창 -->
+                <div id ="pichanmocal" class="modal fade bd-example-modal-lg hanzipicture" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" style="height: 80%;">
+                        <div class="modal-content" style="height: 80%;">
+                            <div class="modal-header">
+                                <h5 class="modal-title">한자 그림 설명</h5>
+                                <button type="button" class="close" onclick="stopyoutube()" data-dismiss="modal"><span>&times;</span>
+                                </button>
+                            </div>
+                            <!-- <div class="modal-body">Modal body text goes here.</div> -->
+
+
+                        <div class="card">
+                            <div class="card-body">
+
+                                <!-- <div id="" style="width: 50%;float: left;height: 30%;">        
+                                    <img class="" src="images/998.jpg" style="margin: 10px;width: 90%;height: 60%;">
+                                </div>
+
+                                <div id="" style="width: 50%;float: left;height: 30%;">       
+                                   <img class="" src="images/999.jpg" style="margin: 10px;width: 90%;height: 60%;">
+                                </div>
+                                 <br><br> -->
+
+                                <br>
+
+                                <iframe id="youTubePlayer2" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="100%" height="300" src="https://www.youtube.com/embed/mPwQzuK768U?rel=0&amp;enablejsapi=1&amp;widgetid=1" ></iframe><!-- 플레이어를 불러올 영역-->
+                                <br>
+
+
+
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" onclick="stopyoutube()" data-dismiss="modal">Close</button>
+                                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                            </div>
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+
                 
             <!-- #/ container -->
         </div>
@@ -502,6 +545,7 @@
 
                     // 플레이어변수 설정
                     var youTubePlayer1;
+                    var youTubePlayer2;
 
                     function onYouTubeIframeAPIReady() {
                         youTubePlayer1 = new YT.Player('youTubePlayer1', {
@@ -514,6 +558,19 @@
                               'onStateChange': onPlayerStateChange //플레이어 상태 변화시 이벤트실행
                             }
                         });//youTubePlayer1셋팅
+
+                        youTubePlayer2 = new YT.Player('youTubePlayer2', {
+                            width: '100%',
+                           /* height: '563',*/
+                            videoId: 'mPwQzuK768U',
+                            playerVars: {rel: 0},//추천영상 안보여주게 설정
+                            events: {
+                              'onReady': onPlayerReady, //로딩할때 이벤트 실행
+                              'onStateChange': onPlayerStateChange //플레이어 상태 변화시 이벤트실행
+                            }
+                        });//youTubePlayer1셋팅
+
+
                     }
 
                     function onYouTubeIframeAPIReady11() {
@@ -540,6 +597,16 @@
                             //플레이어가 재생중일때 작성한 동작이 실행된다.
                         }
                       }
+
+                  /*youtube2  show hide 해주기*/
+                    function youtube2yn(){
+                        if ($("#youTubePlayer2").css("display") == "none") {
+                            $("#youTubePlayer2").css("display",true)   
+                        } else {
+                            $("#youTubePlayer2").css("display","none") 
+                        }
+                    }
+
                      
                     $(document).ready(function () {
                         /*$(".btn_play").on("click", function () {
@@ -686,6 +753,8 @@
                         }
                     })
 
+
+
                     //무비재생 클릭이벤트
                     $("#movieon").click(function(){                     
 
@@ -726,6 +795,28 @@
                         // 
 
                     });
+
+                    
+                    $(document).on('click', '.picyoutube' , function(){
+
+                    var url = "https://www.youtube.com/embed/" + $(this).attr("value") + "?rel=0&enablejsapi=1&widgetid=1";
+                       // youTubePlayer1.f.src = url;
+                       $("#youTubePlayer2").attr("src",url);
+                        setTimeout(function() {
+                        youTubePlayer2.playVideo(); 
+                            }, 1200);
+
+                    });
+
+                    $('#youtubemodal').on('hidden.bs.modal', function () {
+                      youTubePlayer1.stopVideo(); 
+                    })
+
+
+                    $('#pichanmocal').on('hidden.bs.modal', function () {
+                      youTubePlayer2.stopVideo(); 
+                    })
+
 
 
                     //pagingnum 클릭이벤트
@@ -860,6 +951,15 @@
                                 }
                             }
 
+                            /*hSK 유투브 한자설명 추가 로직*/
+                            if(eval(bbb)[i][5]){
+
+                                var tablehanzi =  '<a href="#none" class="picyoutube" data-toggle="modal" data-target=".bd-example-modal-lg.hanzipicture" value="' +
+                                eval(bbb)[i][5] + '" style="color: blue;">' + eval(bbb)[i][2] + '</a>';
+
+                            } else {
+                                var tablehanzi = eval(bbb)[i][2];
+                            }
 
                             $("#tablecontent").append(
                                 /*'<tr>' +
@@ -867,7 +967,7 @@
                                 ccc+
                                 '<td style="font-size: 20px;text-align: center;"><span class ="hanzi_tab">' +
                                 
-                                eval(bbb)[i][2] + '</span></td>' +
+                               tablehanzi + '</span></td>' +
                                 '<td style="font-size: 20px;text-align: center;"><span class ="pinyin_tab"><a href="#none" class="hskmp3" value="' +
                                 eval(bbb)[i][2] + '">' + eval(bbb)[i][3] + '</a></span></td>' +
                                 '<td style="font-size: 20px;text-align: center;"><span class ="yisi_tab">' + eval(bbb)[i][4] + '</span></td>' +
@@ -921,7 +1021,8 @@
                                 document.body.removeChild(elem);
                             }
                         }
-  
+
+                        
                                           
             </script>
 
