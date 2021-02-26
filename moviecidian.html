@@ -282,6 +282,12 @@
                                     <button id = "searchbutton" type="button" class="btn mb-1 btn-flat btn-primary" style="width: 30%;">검색</button>
                                 </div>
 
+                                <div id = "aaaaa">
+                                    <input id="searchpicture1" type="text" class="tdl-new2 form-control" placeholder="병음 입력해주세요" required="" style="width: 30%; margin-right: 0px;float: left;">
+                                    <button id="searchpicbutton" type="button" class="btn mb-1 btn-flat btn-primary" style="width: 30%;">검색</button>
+                                    <input id="searchpicture2" type="text" class="tdl-new2 form-control" required="" style="width: 20%; margin-right: 10px; float: left; margin-left: 10px;">
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -401,6 +407,9 @@
     <script src="js/settings.js"></script>
     <script src="js/gleek.js"></script>
     <script src="js/styleSwitcher.js"></script>
+
+    <script src="js/pinyinpicture.js"></script>
+
 <!-- 추가건 -->
     <script src="js/alldata.js"></script>
     <script src="js/moviecidian.js"></script>
@@ -459,6 +468,8 @@
                         }
                       }
                      
+                     $("#aaaaa").hide();
+
                     $(document).ready(function () {
                         /*$(".btn_play").on("click", function () {
                             youTubePlayer1.playVideo();//재생
@@ -543,6 +554,25 @@
                                     );
                             }
                         }
+                    })
+
+                    //단어사진 페이지 클리 이벤트
+                    $("#searchpicbutton").click(function(){                     
+                        
+
+                        var picture1 = $("#searchpicture1").val();
+                        if(picture1==""){
+                            alert("단어사진을 입력해주세요");
+                        } 
+
+                        var aaa =  eval("pinyinpicture." + picture1);
+                        if(aaa){
+                            $("#searchpicture2").val(aaa);     
+                        } else {
+                            $("#searchpicture2").val("");     
+                        }
+                        
+
                     })
 
                     //무비재생 클릭이벤트
