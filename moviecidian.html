@@ -281,9 +281,8 @@
                                         width: 70%; margin-right: 0px; float: left;">
                                     <button id = "searchbutton" type="button" class="btn mb-1 btn-flat btn-primary" style="width: 30%;">검색</button>
                                 </div>
-
                                 <div id = "aaaaa">
-                                    <input id="searchpicture1" type="text" class="tdl-new2 form-control" placeholder="병음 입력해주세요" required="" style="width: 30%; margin-right: 0px;float: left;">
+                                    <input id="searchpicture1" type="text" class="tdl-new2 form-control" placeholder="병음 입력해주세요" required="" style="width: 30%; margin-right: 0px;float: left;" onkeypress="if( event.keyCode == 13 ){checkpassword();}">
                                     <button id="searchpicbutton" type="button" class="btn mb-1 btn-flat btn-primary" style="width: 30%;">검색</button>
                                     <input id="searchpicture2" type="text" class="tdl-new2 form-control" required="" style="width: 20%; margin-right: 10px; float: left; margin-left: 10px;">
                                 </div>
@@ -569,7 +568,7 @@
                         if(aaa){
                             $("#searchpicture2").val(aaa);     
                         } else {
-                            $("#searchpicture2").val("");     
+                            $("#searchpicture2").val("");      
                         }
                         
 
@@ -593,7 +592,19 @@
                         $('html, body').animate({scrollTop : offset.top}, 1200);
                     }
 
+                    function checkpassword(){
+                        var picture1 = $("#searchpicture1").val();
+                        if(picture1==""){
+                            alert("단어사진을 입력해주세요");
+                        } 
 
+                        var aaa =  eval("pinyinpicture." + picture1);
+                        if(aaa){
+                            $("#searchpicture2").val(aaa);     
+                        } else {
+                            $("#searchpicture2").val("");      
+                        }
+                    }
 
             </script>
 
