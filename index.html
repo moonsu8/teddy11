@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
     <style>
-            h1, h2, h3, h4, a, p, span, li{
+            h1, h2, h3, h4, h5, a, p, span, li{
                   font-family: 'Jua', sans-serif;
             }
     </style>
@@ -242,150 +242,155 @@
         </div>
 
         </br></br>
-         <div class="footer" style="margin-bottom: 30px;">
+         <!-- <div class="footer" style="margin-bottom: 30px;">
             <div class="copyright">
                 <p>처음 오신분들을 위한 레슨둘러보기 <a href="http://naver.me/GEWoox7g">레슨 신청</a></p>
             </div>
-        </div>
-        <div class="container-fluid mt-3">
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="card gradient-5">
-                        <div class="card-body" id = "moviecollection">
-                            <h3 class="card-title text-white">모두를 위한</h3>
-                            <div class="d-inline-block">
-                                <h2 class="text-white">레슨 둘러보기</h2>
-                                <p class="text-white mb-0">Teddy CHINESE</p>
+        </div> -->
+        <div id="accordion-one" class="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color: #7571f9;"> 
+                        <i class="fa" aria-hidden="true"></i> 
+                        처음 오신분들을 위한 레슨 둘러보기
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="container-fluid mt-3 collapse" data-parent="#accordion-one">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="card gradient-5" style="border-radius: 10px;">
+                                <div class="card-body" id = "moviecollection">
+                                    <h3 class="card-title text-white">모두를 위한</h3>
+                                    <div class="d-inline-block">
+                                        <h2 class="text-white">레슨 둘러보기</h2>
+                                        <p class="text-white mb-0">Teddy CHINESE</p>
+                                    </div>
+                                    <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
+                                </div>
                             </div>
-                            <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>                            
+        
 
-            <div class="footer" style="margin-top: 30px;">
+            <!-- <div class="footer" style="margin-top: 30px;">
                 <div class="copyright">
                     <p>유료정규레슨 Study Zone <a href="http://naver.me/GEWoox7g">레슨 신청</a></p>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="container-fluid mt-3">
-                <div class="row">
-                    <!-- <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-5">
-                            <div class="card-body" id = "moviecollection">
-                                <h3 class="card-title text-white">모두를 위한</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">인기 중드 감상</h2>
-                                    <p class="text-white mb-0">Teddy CHINESE</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
-                            </div>
-                        </div>
-                    </div> -->
+            <div id="accordion-one" class="accordion">
 
-                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button> -->
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-6">
-                            <div class="card-body page_to_nm"id = "pinyin2" data-toggle="modal" data-target="#exampleModal">
-                                <h3 class="card-title text-white">중국어 왕기초를 위한</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">병음표 병음듣기</h2>
-                                    <p class="text-white mb-0">Teddy CHINESE</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-1">
-                            <div class="card-body page_to_nm" id = "pinyinmp3" data-toggle="modal" data-target="#exampleModal">
-                                <h3 class="card-title text-white">중국어 왕기초를 위한 </h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">성조 병음 듣기</h2>
-                                    <p class="text-white mb-0">Teddy CHINESE</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-2">
-                            <div class="card-body page_to_nm" id = "pinyinautomp3" data-toggle="modal" data-target="#exampleModal">
-                                <h3 class="card-title text-white">중국어 왕기초를 위한</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">병음 무한반복</h2>
-                                    <p class="text-white mb-0">Teddy CHINESE</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-7">
-                            <div class="card-body page_to_nm" id = "pinyinquiz1" data-toggle="modal" data-target="#exampleModal">
-                                <h3 class="card-title text-white">중국어 왕기초를 위한</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">중국어 병음 퀴즈</h2>
-                                    <p class="text-white mb-0">Teddy CHINESE</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-4">
-                            <div class="card-body page_to_nm" id = "juzimovie" data-toggle="modal" data-target="#exampleModal">
-                                <h3 class="card-title text-white">중급 중국어를 위한</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">중국영화 섀도잉</h2>
-                                    <p class="text-white mb-0">Teddy CHINESE</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-3">
-                            <div class="card-body page_to_nm"id = "moviecidian"data-toggle="modal" data-target="#exampleModal">
-                                <h3 class="card-title text-white">고급 중국어를 위한</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">영화로 단어검색</h2>
-                                    <p class="text-white mb-0">Teddy CHINESE</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-9">
-                            <div class="card-body page_to_nm"id = "hskcidian" data-toggle="modal" data-target="#exampleModal">
-                                <h3 class="card-title text-white">영화 드라마로 보는</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">HSK단어</h2>
-                                    <p class="text-white mb-0">Teddy CHINESE</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-1">
-                            <div class="card-body page_to_nm"id = "100tianmp3" data-toggle="modal" data-target="#exampleModal">
-                                <h3 class="card-title text-white">왕기초 반을 위한 </h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">100일의 기적 mp3</h2>
-                                    <p class="text-white mb-0">Teddy CHINESE</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
-                            </div>
-                        </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color: #7571f9;">
+                            <i class="fa" aria-hidden="true"></i> 
+                        유료정규레슨 Study Zone
+                    </h5>
                     </div>
 
-
-        </div>
+                    <div class="container-fluid mt-3" data-parent="#accordion-two" style="padding-top: 0px; margin-top: 0px !important;">
+                        <div class="row">    
+                            <div id="collapseTwo" class="col-lg-3 col-sm-6 collapse" data-parent="#accordion-one">
+                                <div class="card gradient-6" style="border-radius: 10px; margin-top: 20px;" >
+                                    <div class="card-body page_to_nm"id = "pinyin2" data-toggle="modal" data-target="#exampleModal">
+                                        <h3 class="card-title text-white">중국어 왕기초를 위한</h3>
+                                        <div class="d-inline-block">
+                                            <h2 class="text-white">병음표 병음듣기</h2>
+                                            <p class="text-white mb-0">Teddy CHINESE</p>
+                                        </div>
+                                        <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
+                                    </div>
+                                </div>
+                            <!-- </div>
+                            <div id="collapseTwo" class="col-lg-3 col-sm-6 collapse" style="margin-top: 20px;" data-parent="#accordion-one"> -->
+                                <div class="card gradient-1" style="border-radius: 10px; margin-top: 20px;" >
+                                    <div class="card-body page_to_nm" id = "pinyinmp3" data-toggle="modal" data-target="#exampleModal">
+                                        <h3 class="card-title text-white">중국어 왕기초를 위한 </h3>
+                                        <div class="d-inline-block">
+                                            <h2 class="text-white">성조 병음 듣기</h2>
+                                            <p class="text-white mb-0">Teddy CHINESE</p>
+                                        </div>
+                                        <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
+                                    </div>
+                                </div>
+                            <!-- </div>
+                            <div id="collapseTwo" class="col-lg-3 col-sm-6 collapse" style="margin-top: 20px;" data-parent="#accordion-one"> -->
+                                <div class="card gradient-2" style="border-radius: 10px; margin-top: 20px;" >
+                                    <div class="card-body page_to_nm" id = "pinyinautomp3" data-toggle="modal" data-target="#exampleModal">
+                                        <h3 class="card-title text-white">중국어 왕기초를 위한</h3>
+                                        <div class="d-inline-block">
+                                            <h2 class="text-white">병음 무한반복</h2>
+                                            <p class="text-white mb-0">Teddy CHINESE</p>
+                                        </div>
+                                        <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
+                                    </div>
+                                </div>
+                            <!-- </div>
+                            <div id="collapseTwo" class="col-lg-3 col-sm-6 collapse" style="margin-top: 20px;" data-parent="#accordion-one"> -->
+                                <div class="card gradient-7" style="border-radius: 10px; margin-top: 20px;" >
+                                    <div class="card-body page_to_nm" id = "pinyinquiz1" data-toggle="modal" data-target="#exampleModal">
+                                        <h3 class="card-title text-white">중국어 왕기초를 위한</h3>
+                                        <div class="d-inline-block">
+                                            <h2 class="text-white">중국어 병음 퀴즈</h2>
+                                            <p class="text-white mb-0">Teddy CHINESE</p>
+                                        </div>
+                                        <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
+                                    </div>
+                                </div>
+                            <!-- </div>
+                            <div id="collapseTwo" class="col-lg-3 col-sm-6 collapse" style="margin-top: 20px;" data-parent="#accordion-one"> -->
+                                <div class="card gradient-4" style="border-radius: 10px; margin-top: 20px;" >
+                                    <div class="card-body page_to_nm" id = "juzimovie" data-toggle="modal" data-target="#exampleModal">
+                                        <h3 class="card-title text-white">중급 중국어를 위한</h3>
+                                        <div class="d-inline-block">
+                                            <h2 class="text-white">중국영화 섀도잉</h2>
+                                            <p class="text-white mb-0">Teddy CHINESE</p>
+                                        </div>
+                                        <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
+                                    </div>
+                                </div>
+                            <!-- </div>
+                            <div id="collapseTwo" class="col-lg-3 col-sm-6 collapse" style="margin-top: 20px;" data-parent="#accordion-one"> -->
+                                <div class="card gradient-3" style="border-radius: 10px; margin-top: 20px;" >
+                                    <div class="card-body page_to_nm"id = "moviecidian"data-toggle="modal" data-target="#exampleModal">
+                                        <h3 class="card-title text-white">고급 중국어를 위한</h3>
+                                        <div class="d-inline-block">
+                                            <h2 class="text-white">영화로 단어검색</h2>
+                                            <p class="text-white mb-0">Teddy CHINESE</p>
+                                        </div>
+                                        <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
+                                    </div>
+                                </div>
+                            <!-- </div>
+                            <div id="collapseTwo" class="col-lg-3 col-sm-6 collapse" style="margin-top: 20px;" data-parent="#accordion-one"> -->
+                                <div class="card gradient-9" style="border-radius: 10px; margin-top: 20px;" >
+                                    <div class="card-body page_to_nm"id = "hskcidian" data-toggle="modal" data-target="#exampleModal">
+                                        <h3 class="card-title text-white">영화 드라마로 보는</h3>
+                                        <div class="d-inline-block">
+                                            <h2 class="text-white">HSK단어</h2>
+                                            <p class="text-white mb-0">Teddy CHINESE</p>
+                                        </div>
+                                        <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
+                                    </div>
+                                </div>
+                            <!-- </div>
+                            <div id="collapseTwo" class="col-lg-3 col-sm-6 collapse" style="margin-top: 20px;" data-parent="#accordion-one"> -->
+                                <div class="card gradient-1" style="border-radius: 10px; margin-top: 20px;" >
+                                    <div class="card-body page_to_nm"id = "100tianmp3" data-toggle="modal" data-target="#exampleModal">
+                                        <h3 class="card-title text-white">왕기초 반을 위한 </h3>
+                                        <div class="d-inline-block">
+                                            <h2 class="text-white">100일의 기적 mp3</h2>
+                                            <p class="text-white mb-0">Teddy CHINESE</p>
+                                        </div>
+                                        <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
         <!--**********************************
             Content body end
         ***********************************-->
@@ -428,7 +433,15 @@
         <!--**********************************
             Footer end
         ***********************************-->
-    </div>
+    </div>    
+
+
+
+                    </div>
+                </div>
+
+            </div> 
+
     <!--**********************************
         Main wrapper end
     ***********************************-->
