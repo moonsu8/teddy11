@@ -60,10 +60,10 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
+        <div class="nav-header" style="height: 50px;">
             <div class="brand-logo">
                 <a href="index.html">
-                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
+                    <b class="logo-abbr"><img src="images/logo.png" alt="" style="margin-left: -10px; margin-top: -20px;"> </b>
                     <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
                     <span class="brand-title">
                         <img src="images/logo-text.png" alt="">
@@ -78,14 +78,15 @@
         <!--**********************************
             Header start
         ***********************************-->
-        <div class="header">    
-            <!-- <div class="header-content clearfix">
+        <div class="header" style="height: 50px;">    
+            <div class="header-content clearfix">
                 
                 <div class="nav-control">
                     <div class="hamburger">
                         <span class="toggle-icon"><i class="icon-menu"></i></span>
                     </div>
                 </div>
+
 
                 <div class="header-right">
                     <ul class="clearfix">
@@ -124,13 +125,16 @@
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
                                 <span class="activity active"></span>
-                                <img src="images/user/1.png" height="40" width="40" alt="">
+                                
+                                <a href="http://naver.me/GEWoox7g">
+                                    <img src="images/user/1.png" height="40" width="40" alt="">
+                                </a>
                             </div>
                             
                         </li>
                     </ul>
                 </div>
-            </div> -->
+            </div>
         </div>
         <!--**********************************
             Header end ti-comment-alt
@@ -219,29 +223,16 @@
         <!--**********************************
             Content body start
         ***********************************-->
-        <div class="content-body" style="margin: 0PX;">
+        <!-- <div class="content-body" style="margin: 0PX;"> -->
 
         <input type="text" id="moveurl" display="none" hidden="true">
         </br></br>
-        <div class="col-lg-3">
-            <!-- <div class="card" style="background-image: url(images/hero_1.jpg);background-size: cover;"> -->
-                <div class="card" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(images/hero_1.jpg);height: 400px;background-size: cover;">
-
-                <div class="card-body">
-                    <div class="text-center">
-                        <!-- <span class="display-5"><i class="icon-user gradient-4-text"></i></span> -->
-                        </br></br></br></br></br>
-                        <h2 class="mt-3" style="color: WHITE;"> Welcome to Teddy Chinese</h2>
-                        </br>
-                        <h4 class="mt-3" style="color: WHITE;"> - Online Lesson - </h4>
-                        <!-- <p>Currently active</p><a href="javascript:void()" class="btn gradient-4 btn-lg border-0 btn-rounded px-5">Add
-                            more</a> -->
-                    </div>
-                </div>
+         <div class="col-lg-3">
+           <div class="card" > 
+                <div class="card" style="background-image: url(images/mian_image.jpg);height: 300px;max-width: 100%;background-size: cover;" >
             </div>
-        </div>
+        </div> 
 
-        </br></br>
          <!-- <div class="footer" style="margin-bottom: 30px;">
             <div class="copyright">
                 <p>처음 오신분들을 위한 레슨둘러보기 <a href="http://naver.me/GEWoox7g">레슨 신청</a></p>
@@ -435,9 +426,16 @@
         ***********************************-->
     </div>    
 
-
-
                     </div>
+
+                    <div class="card">
+                        <div class="lesson_gogo card-header">
+                            <h5 class="mb-0 collapsed" data-toggle="" data-target="#collapseTwo" aria-expanded="false" aria-controls="" style="color: #ff9528;">
+                            레슨신청은 여기를 클릭!!
+                        </h5>
+                        </div>
+                    </div>
+
                 </div>
 
             </div> 
@@ -493,6 +491,14 @@
         date = "0" + date;
     }
     var fulldate = year + month+date;
+
+
+    
+    $(document).on('click', '.lesson_gogo' , function(){
+        location.href="http://naver.me/GEWoox7g";
+    });     
+
+
 
     $(document).on('click', '.page_to_nm' , function(){
                         
