@@ -789,7 +789,7 @@
 
                         paging(totalData, dataPerPage, pageCount, currentPage);
                         tableset(aaa, 0, 9);
-                        $("#noAtoB").text('0 ~ 10');
+                        $("#noAtoB").text('1 ~ 10');
 
 
                         // 
@@ -858,8 +858,29 @@
                          if($id != "Next" && $id != "Prev"){
                         tableset(aaa, stnum, endnum);
                         }
+                        if(stnum == 0){
+                            stnum = -1;
+                        }    
+                        $("#noAtoB").text(String(stnum + 2) + ' ~ '  + String(endnum + 1));
 
-                        $("#noAtoB").text(String(stnum + 1) + ' ~ '  + String(endnum + 1));
+                        if(hanzi_YN == "Y"){
+                                $(".hanzi_tab").show();
+                            } else if(hanzi_YN == "N"){
+                                $(".hanzi_tab").hide();
+                            }
+                            
+                            if(pinyin_YN == "Y"){
+                                $(".pinyin_tab").show();
+                            } else if(pinyin_YN == "N"){
+                                $(".pinyin_tab").hide();
+                            }
+
+                            if(yisi_YN == "Y"){
+                                $(".yisi_tab").show();
+                            } else if(yisi_YN == "N"){
+                                $(".yisi_tab").hide();
+                            }
+
 
                        //pagingnum 클릭이벤트 끝 
 
@@ -925,7 +946,10 @@
                         var aaa = dengji;
                         var bbb = "hsk" + aaa;
 
-                        for (var i = stnum; i < endnum+1; i++) {
+                        if(stnum == 0){
+                            stnum = -1;
+                        } 
+                        for (var i = stnum+1; i < endnum+1; i++) {
                             var ccc = "";    
                             //youtube가 존재하면 색깔을 다르게 함
                             for (var j = 0; j < dianying.length; j++) {
