@@ -292,11 +292,11 @@
                                         </div>
 
                                         <div id ="textlist"class="form-group" style="display: none;">
-                                                <textarea class="textarea_editor form-control bg-light" rows="15" placeholder="Enter text ..."></textarea>
+                                                <textarea class="textarea_editor form-control bg-light" rows="15" placeholder="여기에 작문내용을 적어주세요"></textarea>
                                         </div>
                                         <div id ="textpost" class="form-row align-items-center" style="margin-top: 20px; display: none;">
                                             <!-- <div class="col-auto my-1" style="width: 300px;"> -->
-                                                <button id="tosam" type="button" class="btn mb-1 btn-primary" style="width: 93%;">쌤한테 작문 보내기</button>
+                                                <button id="tosam" type="button" class="btn mb-1 btn-primary" style="width: 100%;">쌤한테 작문 보내기</button>
 
                                             <!-- </div> -->
                                         </div>
@@ -343,6 +343,7 @@
     <!-- hsk단어 -->
     <script src="js/hskcidian.js"></script>   
     <script type="text/javascript">
+        let today = new Date();   
 
         $("#textlotto").click(function(){
             if (checkcondition() == "success"){
@@ -481,7 +482,22 @@
         }
 
         function checkM(m){
-            location.href = 'sms:' +'01056477662'+(m == 'ios' ? '&' : '?') + 'body='+ encodeURIComponent($(".textarea_editor").val());
+            var wordlist = '';
+            for (var i = 0; i < $(".btn-info").length; i++) {
+                wordlist = wordlist + $(".btn-info").eq(i).text()
+                if(i != $(".btn-info").length-1){
+                    wordlist = wordlist +', '
+                }
+            }
+
+
+            var message = today.toLocaleString() + '\n'
+                            + $("#hskdengji").val() + '\n'
+                            + wordlist + '\n' + '\n'
+                            + $(".textarea_editor").val()
+                            
+           // location.href = 'sms:' +'01056477662'+(m == 'ios' ? '&' : '?') + 'body='+ encodeURIComponent($(".textarea_editor").val());
+            location.href = 'sms:' +'01056477662'+(m == 'ios' ? '&' : '?') + 'body='+ encodeURIComponent(message);
         }
 
         function checkcondition(){
