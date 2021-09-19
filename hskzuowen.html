@@ -345,6 +345,12 @@
     <script type="text/javascript">
         let today = new Date();   
 
+    let year = today.getFullYear(); // 년도
+    let month = today.getMonth() + 1;  // 월
+    let date = today.getDate();  // 날짜
+    let day = today.getDay();  // 요일
+
+
         $("#textlotto").click(function(){
             if (checkcondition() == "success"){
                 $("#wordlist,#textlist,#textpost").show();
@@ -481,6 +487,36 @@
             }
         }
 
+        //요일 구하기
+        function sumday(param){
+             var day = "";
+             switch (param){
+              case 0 :
+                 day = "일요일";
+                  break;
+              case 1 :
+                  day = "월요일";
+                  break;
+              case 2 :
+                  day = "화요일";
+                  break;
+                  
+              case 3 :
+                  day = "수요일";
+                  break;
+              case 4 :
+                  day = "목요일";
+                  break;
+              case 5 :
+                  day = "금요일";
+                  break;
+              case 6 :
+                  day = "토요일";
+                  break;    
+            }
+            return day;
+        }
+
         function checkM(m){
             var wordlist = '';
             for (var i = 0; i < $(".btn-info").length; i++) {
@@ -491,7 +527,8 @@
             }
 
 
-            var message = today.toLocaleString() + '\n'
+            var message = //today.toLocaleString() + '\n'
+                             year + ' : ' + month + ' : ' + date + ' ' + sumday(day) + '\n'
                             + $("#hskdengji").val() + '\n'
                             + wordlist + '\n' + '\n'
                             + $(".textarea_editor").val()
