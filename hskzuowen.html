@@ -278,7 +278,9 @@
                                         </div>
                                         <div class="form-row align-items-center" style="margin-top: 20px;">
                                             <!-- <div class="col-auto my-1" style="width: 300px;"> -->
-                                                <button id="textlotto" type="button" class="btn mb-1 btn-primary" style="width: 93%;">단어 추첨</button>
+                                                <button id="textlotto0" type="button" class="btn mb-1 btn-primary" style="width: 93%;">초기화</button>
+                                                <button id="textlotto1" type="button" class="btn mb-1 btn-primary" style="width: 93%;">단어 추첨(추가)</button>
+                                                <button id="textlotto2" type="button" class="btn mb-1 btn-primary" style="width: 93%;">단어 추첨(초기화)</button>
 
                                             <!-- </div> -->
                                         </div>
@@ -350,8 +352,20 @@
     let date = today.getDate();  // 날짜
     let day = today.getDay();  // 요일
 
+    $("#textlotto0").click(function(){
+            $("#word").empty();   
+        })
 
-        $("#textlotto").click(function(){
+        $("#textlotto1").click(function(){
+            if (checkcondition() == "success"){
+                $("#wordlist,#textlist,#textpost").show();
+                makeword1();
+            }else {
+                alert("HSK종류와 단어수를 체크해주세요");
+            }         
+        })
+
+        $("#textlotto2").click(function(){
             if (checkcondition() == "success"){
                 $("#wordlist,#textlist,#textpost").show();
                 makeword();
@@ -359,6 +373,9 @@
                 alert("HSK종류와 단어수를 체크해주세요");
             }         
         })
+
+
+
         /*모달 mp3 재생*/
          $(document).on('click', '.hskmp3' , function(){
                         var hanzimp3 = "./ciyusound/" + $(this).attr("value") + ".mp3";
@@ -457,7 +474,79 @@
         //         checkM(checkMobile());
         //     });
 
+        function makeword1(){
+            var hskdengji = $("#hskdengji").val();
+            var wordnum = parseInt($("#wordnum").val());
 
+            var wordlottonm = selectIndex(eval(hskdengji).length,wordnum);
+            for (var i = 0; i < wordnum; i++) {
+                    $("#word").append(
+                        '<button type="button" class="btn btn-info"style="margin-top: 10px; margin-right: 5px;"'
+                        +'pinyin="' + eval(hskdengji)[wordlottonm[i]][3] + '"'
+                        +'yisi="' + eval(hskdengji)[wordlottonm[i]][4] + '"'
+                        +'data-toggle="modal" data-target="#basicModal'+ i +'"'
+                        +'>'
+                        + eval(hskdengji)[wordlottonm[i]][2]
+                        +'</button>'   
+
+                        + '<div class="modal fade" id="basicModal'+ i +'">'
+                        +    '<div class="modal-dialog" role="document">'
+                        +        '<div class="modal-content">'
+                        +            '<div class="modal-header">'
+                        +                '<h5 class="modal-title">단어 복습</h5>'
+                        +                '<button type="button" class="close" data-dismiss="modal"><span>&times;</span>'
+                        +                '</button>'
+                        +            '</div>'
+                        +            '<div class="modal-body">'
+
+                        +            '<table class="table">'
+                        +                '<colgroup><col width="10%">'
+                        +                '<col width="30%">'
+                        +                '<col width="20%">'
+                        +                '<col width="30%">'
+                        +                '</colgroup>'
+                        +                '<tbody id="tablecontent">'
+                        +                    '<tr>'
+                        +                        '<td style="font-size: 20px;text-align: center;">'
+                        +                            '<a href="#none" class="hskyoutube" data-toggle="modal" data-target=".bd-example-modal-lg" value="啊">'
+                        +                                '<span class="badge badge-primary px-2">'
+                        +                                    '<i class="fab fa-youtube"></i>'
+                        +                                '</span>'
+                        +                            '</a>'
+                        +                        '</td>'
+                        +                        '<td style="font-size: 20px;text-align: center;">'
+                        +                            '<span class="hanzi_tab">'+ eval(hskdengji)[wordlottonm[i]][2]+'</span>'
+                        +                        '</td>'
+                        +                        '<td style="font-size: 20px;text-align: center;">'
+                        +                            '<span class="pinyin_tab">'
+                        +                                '<a href="#none" class="hskmp3" value="'+eval(hskdengji)[wordlottonm[i]][2]+'">'
+                        +                                   eval(hskdengji)[wordlottonm[i]][3]+'</a>'
+                        +                            '</span>'
+                        +                        '</td>'
+                        +                        '<td style="font-size: 20px;text-align: center;">'
+                        +                            '<span class="yisi_tab">'+eval(hskdengji)[wordlottonm[i]][4]+'</span>'
+                        +                        '</td>'
+                        +                    '</tr>'
+                        +                '</tbody>'
+                        +            '</table>'
+
+
+
+
+
+
+                        +    '</div>'
+                        +            '<div class="modal-footer">'
+                        +                '<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>'
+                        +            '</div>'
+                        +        '</div>'
+                        +    '</div>'
+                        +'</div>'
+
+
+                    )
+            }
+        }
 
 
         const selectIndex = (totalIndex, selectingNumber) => {
@@ -546,9 +635,21 @@
 
         }
 
+        // 함수형 프로그래밍 (두 날짜의 차이 )
+    var date1 = '20210910'
+    var date2 = '20210922'
 
+    console.log(
+      dateCon('20210910','20210922')
+    ); 
 
+    // 함수형 프로그래밍 (두 날짜의 차이 )
+    function dateCon(param1,param2){
+        var result = '';
+        result = parseInt(param2) - parseInt(param1);
 
+        return result;
+    }
 
     </script>
 </body>
