@@ -232,108 +232,139 @@
                 <div class="row">
             <div class="col-lg-6">
                 <div class="card gradient-1">
-                            <div class="card-body" id = "pinyinmp3">
-                                <h3 class="card-title text-white">모두를 위한 </h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">작문 연습하기</h2>
-                                    <p class="text-white mb-0">Teddy CHINESE</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
-                            </div>
+                    <div class="card-body" id = "pinyinmp3">
+                        <h3 class="card-title text-white">모두를 위한 </h3>
+                        <div class="d-inline-block">
+                            <h2 class="text-white">작문 연습하기</h2>
+                            <p class="text-white mb-0">Teddy CHINESE</p>
                         </div>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
+                    </div>
+                </div>
 
-                        <div class="card">
-                            <div class="card-body" style="padding: 15px;">
-                                <h4 class="card-title">Default Tab</h4>
-                                <!-- Nav tabs -->
-                                <div class="default-tab">
-                                    <ul class="nav nav-tabs mb-3" role="tablist">
-                                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">작문연습</a>
-                                        </li>
-                                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#profile">복습</a>
-                                        </li>
-                                    <div class="tab-content">
-                                        <div class="tab-pane fade show active" id="home" role="tabpanel">
-                                            <div class="card">
-                            <div class="card-body" style="padding: 18px;">
-                                <!-- <h4 class="card-title">1.성조선택</h4> -->
-                                <div class="basic-form">
-                                    <form>
-                                        <div class="form-row align-items-center">
-                                            <!-- <div class="col-auto my-1" style="width: 300px;"> -->
-                                                <button type="button" class="btn mb-1 btn-primary" style="width: 30%;background: white;color: black;border-color: white;">HSK</button>
-                                                <select class="custom-select mr-sm-2" id="hskdengji" 
-                                                style="width: 60%;height: 45px;margin-left: 3%;">
-                                                    <option selected="selected">선택</option>
-                                                    <option value="hsk1">HSK 1급</option>
-                                                    <option value="hsk2">HSK 2급</option>
-                                                    <option value="hsk3">HSK 3급</option>
-                                                    <option value="hsk4">HSK 4급</option>
-                                                    <option value="hsk5">HSK 5급</option>
-                                                    <option value="hsk6">HSK 6급</option>
-                                                </select>
-                                            <!-- </div> -->
-                                        </div>
-                                        <div class="form-row align-items-center" style="margin-top: 10px;">
-                                            <!-- <div class="col-auto my-1" style="width: 300px;"> -->
-                                                <button type="button" class="btn mb-1 btn-primary" style="width: 30%;background: white;color: black;border-color: white;">단어 수</button>
-                                                <select class="custom-select mr-sm-2" id="wordnum" style="width: 60%;height: 45px;margin-left: 3%;">
-                                                    <option selected="selected">선택</option>
-                                                    <option value="1">1개</option>
-                                                    <option value="2">2개</option>
-                                                    <option value="3">3개</option>
-                                                    <option value="4">4개</option>
-                                                    <option value="5">5개</option>
-                                                    <option value="6">6개</option>
-                                                </select>
-                                            <!-- </div> -->
-                                        </div>
-                                        <div class="form-row align-items-center" style="margin-top: 20px; justify-content: center;">
-                                            <!-- <div class="col-auto my-1" style="width: 300px;"> -->
-                                                <button id="textlotto0" type="button" class="btn mb-1 btn-primary" style="width: 85%;">초기화</button>
-                                                <button id="textlotto1" type="button" class="btn mb-1 btn-primary" style="width: 85%;">단어 추첨(추가)</button>
-                                                <button id="textlotto2" type="button" class="btn mb-1 btn-primary" style="width: 85%;">단어 추첨(초기화)</button>
+                <div class="card">
+                    <div class="card-body" style="padding: 15px;">
+                        <h4 class="card-title"></h4>
+                        <!-- Nav tabs -->
+                        <div class="default-tab">
+                            <ul class="nav nav-tabs mb-3" role="tablist">
+                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">작문연습</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#profile">복습</a>
+                                </li>
+                            <div class="tab-content" style="width: 100%;">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel">
+                                    <div class="card">
+                                        <div class="card-body" style="padding: 18px;">
+                                            <!-- <h4 class="card-title">1.성조선택</h4> -->
+                                            <div class="basic-form">
+                                                <form>
+                                                    <div class="form-row align-items-center">
+                                                        <!-- <div class="col-auto my-1" style="width: 300px;"> -->
+                                                            <button type="button" class="btn mb-1 btn-primary" style="width: 30%;background: white;color: black;border-color: white;">HSK</button>
+                                                            <select class="custom-select mr-sm-2" id="hskdengji" 
+                                                            style="width: 60%;height: 45px;margin-left: 3%;">
+                                                                <option selected="selected">선택</option>
+                                                                <option value="hsk1">HSK 1급</option>
+                                                                <option value="hsk2">HSK 2급</option>
+                                                                <option value="hsk3">HSK 3급</option>
+                                                                <option value="hsk4">HSK 4급</option>
+                                                                <option value="hsk5">HSK 5급</option>
+                                                                <option value="hsk6">HSK 6급</option>
+                                                            </select>
+                                                        <!-- </div> -->
+                                                    </div>
+                                                    <div class="form-row align-items-center" style="margin-top: 10px;">
+                                                        <!-- <div class="col-auto my-1" style="width: 300px;"> -->
+                                                            <button type="button" class="btn mb-1 btn-primary" style="width: 30%;background: white;color: black;border-color: white;">단어 수</button>
+                                                            <select class="custom-select mr-sm-2" id="wordnum" style="width: 60%;height: 45px;margin-left: 3%;">
+                                                                <option selected="selected">선택</option>
+                                                                <option value="1">1개</option>
+                                                                <option value="2">2개</option>
+                                                                <option value="3">3개</option>
+                                                                <option value="4">4개</option>
+                                                                <option value="5">5개</option>
+                                                                <option value="6">6개</option>
+                                                            </select>
+                                                        <!-- </div> -->
+                                                    </div>
+                                                    <div class="form-row align-items-center" style="margin-top: 20px; justify-content: center;">
+                                                        <!-- <div class="col-auto my-1" style="width: 300px;"> -->
+                                                            <button id="textlotto0" type="button" class="btn mb-1 btn-primary" style="width: 85%;">초기화</button>
+                                                            <button id="textlotto1" type="button" class="btn mb-1 btn-primary" style="width: 85%;">단어 추첨(추가)</button>
+                                                            <button id="textlotto2" type="button" class="btn mb-1 btn-primary" style="width: 85%;">단어 추첨(초기화)</button>
 
-                                            <!-- </div> -->
-                                        </div>
+                                                        <!-- </div> -->
+                                                    </div>
 
-                                        <div id ="wordlist" class="card" style="display: none;">
-                                            <div class="card-body">
-                                                <!-- <h4 class="card-title">추첨 단어</h4> -->
-                                                <div id = "word"class="general-button">
-                                                </div>
+                                                    <div id ="wordlist" class="card" style="display: none;">
+                                                        <div class="card-body">
+                                                            <!-- <h4 class="card-title">추첨 단어</h4> -->
+                                                            <div id = "word"class="general-button">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id ="textlist"class="form-group" style="display: none;">
+                                                            <textarea class="textarea_editor form-control bg-light" rows="15" placeholder="여기에 작문내용을 적어주세요"></textarea>
+                                                    </div>
+                                                    <div id ="textpost" class="form-row align-items-center" style="margin-top: 20px; display: none;">
+                                                        <!-- <div class="col-auto my-1" style="width: 300px;"> -->
+                                                            <button id="tosam" type="button" class="btn mb-1 btn-primary" style="width: 100%;">쌤한테 작문 보내기</button>
+
+                                                        <!-- </div> -->
+                                                    </div>
+
+
+                                                </form>
                                             </div>
                                         </div>
-
-                                        <div id ="textlist"class="form-group" style="display: none;">
-                                                <textarea class="textarea_editor form-control bg-light" rows="15" placeholder="여기에 작문내용을 적어주세요"></textarea>
-                                        </div>
-                                        <div id ="textpost" class="form-row align-items-center" style="margin-top: 20px; display: none;">
-                                            <!-- <div class="col-auto my-1" style="width: 300px;"> -->
-                                                <button id="tosam" type="button" class="btn mb-1 btn-primary" style="width: 100%;">쌤한테 작문 보내기</button>
-
-                                            <!-- </div> -->
-                                        </div>
-
-
-                                    </form>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="profile">
-                                            <div class="p-t-15">
-                                                <h4>This is profile title</h4>
-                                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor.</p>
-                                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor.</p>
+                                <div class="tab-pane fade" id="profile">
+                                    <div class="card" tyle="width: 100%;">
+                                        <div class="card-body" style="padding: 18px;">
+                                            <!-- <h4 class="card-title">1.성조선택</h4> -->
+                                            <div class="basic-form">
+                                                    <div class="form-row align-items-center">
+                                                        <!-- <div class="col-auto my-1" style="width: 300px;"> -->
+                                                            <button type="button" class="btn mb-1 btn-primary" style="width: 30%;background: white;color: black;border-color: white;">학생</button>
+                                                            <select class="custom-select mr-sm-2" id="mingzi" 
+                                                            style="width: 60%;height: 45px;margin-left: 3%;">
+                                                                <option selected="selected">선택</option>
+                                                                <option value="김파랑">김파랑</option>
+                                                                <option value="서지인">서지인</option>
+                                                                <option value="김궁민">김궁민</option>
+                                                                <option value="송언지">송언지</option>
+                                                            </select>
+                                                        <!-- </div> -->
+                                                    </div>
+                                                  
+                                                    <div id="fuxichang"class="form-row align-items-center" style="margin-top: 20px; justify-content: center;">
+
+                                                    </div>
+
+                                                    
+                                                    <div id ="textpost" class="form-row align-items-center" style="margin-top: 20px;">
+                                                        <!-- <div class="col-auto my-1" style="width: 300px;"> -->
+                                                            <button id="tosam2" type="button" class="btn mb-1 btn-primary" style="width: 100%;">쌤한테 작문 보내기</button>
+
+                                                        <!-- </div> -->
+                                                    </div>
+
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
-</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
         </div>
@@ -368,6 +399,7 @@
     <script src="js/styleSwitcher.js"></script>
     <!-- hsk단어 -->
     <script src="js/hskcidian.js"></script>   
+    <script src="js/fuxi.js"></script>  
     <script type="text/javascript">
         let today = new Date();   
 
@@ -375,6 +407,52 @@
     let month = today.getMonth() + 1;  // 월
     let date = today.getDate();  // 날짜
     let day = today.getDay();  // 요일
+
+    var xuesheng = ["김파랑","서지인","김궁민","송언지"];
+    
+    $("#mingzi").change(function(){
+        var mingzi = eval($("#mingzi").val());
+        if(mingzi == ""){
+            return;
+        }
+        $("#fuxichang").empty();
+        
+        makeword3(mingzi);
+    })
+
+    function  makeword3(param){
+        
+
+        for (var i = 0; i < param.length; i++) {
+            $("#fuxichang").append(
+                             '<button  type="button" class="btn mb-1 btn-primary" style="width: 85%;font-size: 1em;">'
+                +            '<p id="jieshi' + i +'" style="word-break: break-all;">'
+                +            param[i][2]  
+                 +           '</p>'    
+                 +           '</button>'
+                 +           '<div id =""class="form-group" style="width: 85%;">'
+                     +           '<textarea id ="zhongwen'+ i + '" class="form-control bg-light jieshi" rows="15" placeholder="화이팅!" style="height: 60px;"></textarea>'
+                 +           '</div>'
+
+            );
+        }
+
+    }
+
+    $("#tosam2").click(function(){
+       var mingzi = eval($("#mingzi").val());
+
+       for (var i = 0; i < mingzi.length; i++) {
+            var idname = "#"+"zhongwen" + i
+            if($(idname).val() == ""){
+                $(idname).focus();    
+                alert("모든 문장을 작문 해주셔야해요~");
+                return false;
+            }
+       }
+       checkM2(checkMobile());
+    })
+
 
     $("#textlotto0").click(function(){
             $("#word").empty();   
@@ -641,10 +719,24 @@
 
 
             var message = //today.toLocaleString() + '\n'
-                             year + ' : ' + month + ' : ' + date + ' ' + sumday(day) + '\n'
+                             year + ' : ' + month + ' : ' + date + ' ' + sumday(day) + 'HSK작문연습'+ '\n'
                             + $("#hskdengji").val() + '\n'
                             + wordlist + '\n' + '\n'
                             + $(".textarea_editor").val()
+                            
+           // location.href = 'sms:' +'01056477662'+(m == 'ios' ? '&' : '?') + 'body='+ encodeURIComponent($(".textarea_editor").val());
+            location.href = 'sms:' +'01056477662'+(m == 'ios' ? '&' : '?') + 'body='+ encodeURIComponent(message);
+        }
+
+        function checkM2(m){
+            var classnum = $('.jieshi').length;
+            var message = year + ' : ' + month + ' : ' + date + ' ' + sumday(day) + '드라마복습'+ '\n';
+
+            for (var i = 0; i < classnum; i++) {
+                    message = message + $("#"+"jieshi"+i).text() + '\n' + $("#"+"zhongwen"+i).val()+ '\n'+ '\n';
+                    
+            }    
+
                             
            // location.href = 'sms:' +'01056477662'+(m == 'ios' ? '&' : '?') + 'body='+ encodeURIComponent($(".textarea_editor").val());
             location.href = 'sms:' +'01056477662'+(m == 'ios' ? '&' : '?') + 'body='+ encodeURIComponent(message);
