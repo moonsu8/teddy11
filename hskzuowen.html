@@ -719,7 +719,7 @@
 
 
             var message = //today.toLocaleString() + '\n'
-                             year + ' : ' + month + ' : ' + date + ' ' + sumday(day) + 'HSK작문연습'+ '\n'
+                             year + ' : ' + month + ' : ' + date + ' ' + sumday(day) + '\n' + 'HSK작문연습'+ '\n'+ '\n'
                             + $("#hskdengji").val() + '\n'
                             + wordlist + '\n' + '\n'
                             + $(".textarea_editor").val()
@@ -730,7 +730,7 @@
 
         function checkM2(m){
             var classnum = $('.jieshi').length;
-            var message = year + ' : ' + month + ' : ' + date + ' ' + sumday(day) + '드라마복습'+ '\n';
+            var message = year + ' : ' + month + ' : ' + date + ' ' + sumday(day) + '\n' + '드라마복습'+ '\n'+ '\n';
 
             for (var i = 0; i < classnum; i++) {
                     message = message + $("#"+"jieshi"+i).text() + '\n' + $("#"+"zhongwen"+i).val()+ '\n'+ '\n';
