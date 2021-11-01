@@ -205,11 +205,6 @@
                     </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="fab fa-github-alt"></i></i><span class="nav-text">장혜영 同学</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="fab fa-firefox"></i><span class="nav-text">김현민 同学</span>
                         </a>
                     </li>
@@ -341,7 +336,7 @@
                                                     </div>
                                                   
                                                     <div id="fuxichang"class="form-row align-items-center" style="margin-top: 20px; justify-content: center;">
-
+                                                        <!-- <h4 id="lessontime" class="card-title"></h4>   -->  
                                                     </div>
 
                                                     
@@ -420,9 +415,26 @@
         makeword3(mingzi);
     })
 
-    function  makeword3(param){
-        
+    function getInputDayLabel(param) {
+    
+    var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
+    
+    var today = new Date(param).getDay();
+    var todayLabel = week[today];
+    
+    return todayLabel;
+}
+ 
+ 
 
+    function  makeword3(param){
+        var aaa = param[0][0];
+        var bbb = aaa.substring(0,4) + "-" + aaa.substring(4,6) + "-" +aaa.substring(6,8);
+        //2021년 12월 22일 일요일 에 배운 내용입니다.
+        var ccc = aaa.substring(0,4) + "년 " + aaa.substring(4,6)+  "월  " + aaa.substring(6,8) + "일  " + getInputDayLabel(bbb) + "에 배운 내용이에요~";
+         $("#fuxichang").append(
+           '<h4 id="lessontime" class="card-title" style="font-size: 10px;">' +  ccc  + '</h4>'  
+           ); 
         for (var i = 0; i < param.length; i++) {
             $("#fuxichang").append(
                              '<button  type="button" class="btn mb-1 btn-primary" style="width: 85%;font-size: 1em;">'
