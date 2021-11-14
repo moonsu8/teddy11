@@ -128,7 +128,7 @@
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
                                 <span class="activity active"></span>
-                                <img src="images/user/1.png" height="40" width="40" alt="">
+                                <img id = "answer"src="images/user/1.png" height="40" width="40" alt="">
                             </div>
                             
                         </li>
@@ -465,7 +465,17 @@
        checkM2(checkMobile());
     })
 
+    
+    $("#answer").click(function(){
+        var answer = "";
+        var mingzi = eval($("#mingzi").val());
 
+        for (var i = 0; i < mingzi.length; i++) {
+            answer =  answer+ $("#mingzi").val()+"님 "+ parseInt(i+1) + "번 답안 :" + mingzi[i][1] +"\n";
+        }
+        answer =  answer + "\n" +"당신의 양심을 믿습니다. "
+        alert(answer);    
+    })    
     $("#textlotto0").click(function(){
             $("#word").empty();   
         })
