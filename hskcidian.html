@@ -350,6 +350,26 @@
 
                             </div>
                         </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h4>2. HSK 단어검색</h4>
+                                </div>
+                                <div>
+                                    <input id="searchciyu" type="text" class="tdl-new2 form-control" placeholder="중국어를 입력해주세요" required style="
+                                        width: 70%; margin-right: 0px; float: left;">
+                                    <button id = "searchbutton" type="button" class="btn mb-1 btn-flat btn-primary" style="width: 30%;">검색</button>
+                                </div>
+                                <div class="card-title">
+                                    <h4 id = "hskfind"></h4>
+                                </div>
+                                <div class="card-title">
+                                    <h4 id = "100cijifind"></h4>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div id="youtubemodal"class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
@@ -435,6 +455,8 @@
                             </div>
                         </div>
 
+
+
                         </div>
                     </div>
                 </div>
@@ -518,7 +540,9 @@
 <!-- 영화 대본 --> 
     <script src="js/moviecidian.js"></script>  
 <!-- hsk단어 -->
-    <script src="js/hskcidian.js"></script>     
+    <script src="js/hskcidian.js"></script>  
+    <script src="js/100qiji.js"></script>
+      
     
     <script type="text/javascript">
                 
@@ -633,8 +657,70 @@
                           }*/
                     });
 
-                    //클릭이벤트
+                    //아래 조회 버튼 클릭이벤트
+                     $(document).on('click', '#searchbutton' , function(){
 
+                        var ciyu = $("#searchciyu").val();
+                        var hskword = "HSK 검색결과 해당 단어는"+"<br>"; 
+                        var cijiword = "교재 검색결과 해당 단어는 교재"+"<br>";
+
+                        var entireword ="";
+
+                        if( ciyu == ""){
+                            alert("HSK 검색 단어를 입력해주세요~~");
+                            return false;
+                        }
+
+                        //1.HSK 단어가 있는지 조회
+                        for (var i = 1; i < 7; i++) {
+                            var name = "hsk" + i;
+                            var hsknum = eval(name);
+                            for (var j = 0; j < hsknum.length; j++) {
+                                if( hsknum[j][2] == ciyu ){
+                                    entireword = entireword + "는 "+ hsknum[j][1] + "급"+  hsknum[j][0]+" 번째 단어입니다."+"<br>";
+                                }
+                            }
+                        }
+
+                        //2.교재1에 존재하는 지를 조회
+                        for (var i = 0;  i < qiji.length; i++) {
+                            if( qiji[i][2].indexOf(ciyu) !== -1) {
+                                var text = makeword100(qiji[i],2);
+                                cijiword = cijiword + text;
+                            } else if( qiji[i][5].indexOf(ciyu) !== -1) {
+                                var text = makeword100(qiji[i],5);
+                                cijiword = cijiword + text;
+                            } else if( qiji[i][8].indexOf(ciyu) !== -1) {
+                                var text = makeword100(qiji[i],8);
+                                cijiword = cijiword + text;
+                            } else if( qiji[i][11].indexOf(ciyu) !== -1) {
+                                var text = makeword100(qiji[i],11);
+                                cijiword = cijiword + text;
+                            } 
+                        }  
+
+                        if ( entireword != "" ){
+                            //$("#hskfind").text(hskword);
+                            document.getElementById("hskfind").innerHTML=hskword + entireword+"<br>";
+                        } else {
+                             document.getElementById("hskfind").innerHTML="HSK 단어가 아닙니다."+"<br>";
+                        }
+
+                        if ( cijiword != "교재 검색결과 해당 단어는 교재"+"<br>"){
+                            document.getElementById("100cijifind").innerHTML=cijiword;
+                        } else {
+                            document.getElementById("100cijifind").innerHTML="에 존재하지 않습니다.";
+                        }
+
+                     });   
+                    //클릭이벤트
+                     function makeword100(data,number){
+                        var text = data[number];
+                        text = data[0] + "과  " + data[1] +"페이지"+"<br>";
+                        text = text + data[number] +"<br>";
+                        text = text + data[number+2] +"<br><br>";
+                        return text;
+                     }
 
                     $(document).on('click', '#playbutton' , function(){
                         youTubePlayer1.pauseVideo();
