@@ -335,7 +335,9 @@
                                                                 <option value="손영신">손영신</option>
                                                             </select>
                                                         <!-- </div> -->
-                                                        <button id="ctrlCv" type="button" class="btn mb-1 btn-primary" style="width: 20%;">복사</button>
+                                                        <button id="ctrlCv" type="button" class="btn mb-1 btn-primary" style="width: 20%;margin-left: auto;">
+                                                            <i class="fas fa-cat"></i>
+                                                        </button>
                                                     </div>
                                                   
                                                     <div id="fuxichang"class="form-row align-items-center" style="margin-top: 20px; justify-content: center;">
@@ -476,6 +478,7 @@
             answer =  answer+ parseInt(i+1) + ". " + mingzi[i][2] +"\n\n\n";
         }
         copy(answer);
+        alert("복사완료~!");
     })    
     
     function copy(text) { 
