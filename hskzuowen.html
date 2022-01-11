@@ -221,6 +221,7 @@
         ***********************************-->
         <div class="content-body">
 
+            <textarea style="display:none" id="myInput" value=""></textarea>
            
             <!-- row -->
             <div class="container-fluid">
@@ -323,9 +324,9 @@
                                             <div class="basic-form">
                                                     <div class="form-row align-items-center">
                                                         <!-- <div class="col-auto my-1" style="width: 300px;"> -->
-                                                            <button type="button" class="btn mb-1 btn-primary" style="width: 30%;background: white;color: black;border-color: white;">학생</button>
+                                                            <button type="button" class="btn mb-1 btn-primary" style="width: 20%;background: white;color: black;border-color: white;">학생</button>
                                                             <select class="custom-select mr-sm-2" id="mingzi" 
-                                                            style="width: 60%;height: 45px;margin-left: 3%;">
+                                                            style="width: 55%;height: 45px;margin-left: 3%;">
                                                                 <option selected="selected">선택</option>
                                                                 <option value="김파랑">김파랑</option>
                                                                 <option value="서지인">서지인</option>
@@ -334,6 +335,7 @@
                                                                 <option value="손영신">손영신</option>
                                                             </select>
                                                         <!-- </div> -->
+                                                        <button id="ctrlCv" type="button" class="btn mb-1 btn-primary" style="width: 20%;">복사</button>
                                                     </div>
                                                   
                                                     <div id="fuxichang"class="form-row align-items-center" style="margin-top: 20px; justify-content: center;">
@@ -465,6 +467,28 @@
        }
        checkM2(checkMobile());
     })
+
+    $("#ctrlCv").click(function(){
+        var ccc = year + "년 " + month +  "월  " + date + "일 " + getInputDayLabel( year+ "-" + month + "-" +date) +"\n";
+        var answer = ccc+ $("#mingzi").val()+"님께서 작문숙제를 하십니다. "+"\n\n";
+        var mingzi = eval($("#mingzi").val());
+        for (var i = 0; i < mingzi.length; i++) {
+            answer =  answer+ parseInt(i+1) + ". " + mingzi[i][2] +"\n\n\n";
+        }
+        copy(answer);
+    })    
+    
+    function copy(text) { 
+        var input = document.createElement('textarea'); 
+        input.innerHTML = text; 
+        document.body.appendChild(input); 
+        input.select(); var result = document.execCommand('copy'); 
+        document.body.removeChild(input); 
+         console.log('Copied!');
+        return result; 
+    }
+
+
 
     
     $("#answer").click(function(){
