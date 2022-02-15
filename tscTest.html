@@ -323,7 +323,7 @@
                                             <!-- <h4 class="card-title">1.성조선택</h4> -->
                                             <div class="basic-form">
                                                     
-
+<h>PART2 준비중입니다.</h>
 
                                             </div>
                                         </div>
@@ -350,14 +350,51 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- PART4 -->
-                                <div class="tab-pane fade" id="tsc4" >
+
+                                    <!-- PART4 -->
+                                <div class="tab-pane fade" id="tsc4">
                                     <div class="card">
                                         <div class="card-body" style="padding: 18px;">
                                             <!-- <h4 class="card-title">1.성조선택</h4> -->
                                             <div class="basic-form">
-                                                    
+                                                <div class="form-row align-items-center">
+                                                    <button type="button" class="btn mb-1 btn-primary" style="width: 30%;background: white;color: black;border-color: white;">예제</button>
+                                                    <select class="custom-select mr-sm-2" id="part4lizi" 
+                                                    style="width: 60%;height: 45px;margin-left: 3%;">
+                                                        <option selected="selected">선택</option>
+                                                        <option value="0">예제1 </option>
+                                                        <option value="1">예제2 </option>
+                                                        <option value="2">예제3 </option>
+                                                        <option value="3">예제4 </option>
+                                                    </select>
+                                                </div>
+
+                                                <h3 id="part4wenzhang"style="text-align: center; margin-top: 30px;">PART4 준비중입니다.</h3>
+
+                                                <div class="form-row align-items-center" style= "margin-top: 60px;">
+                                                    <button type="button" class="btn mb-1 btn-primary" style="width: 30%;background: white;color: black;border-color: white; ">유형</button>
+                                                    <select class="custom-select mr-sm-2" id="part4juzi" 
+                                                    style="width: 60%;height: 45px;margin-left: 3%;">
+                                                        <option selected="selected">선택</option>
+                                                        <option value="0">건강 </option>
+                                                        <option value="1">시간 </option>
+                                                        <option value="2">돈 </option>
+                                                        <option value="3">자유 </option>
+                                                    </select>
+                                                </div>
+
+                                                <div id="fuxichang" class="form-row align-items-center" style="margin-top: 20px; justify-content: center;">
+                                                    <div id="" class="form-group" style="width: 85%;">
+                                                        <textarea id="part4daan" class="form-control bg-light jieshi" rows="15" placeholder="" style="height: 200px; ">
+                                                        </textarea>    
+                                                        <button id="tsc4time1" type="button" class="btn mb-1 btn-primary" style="width: 20%;margin-left: auto;margin-top: 20px;">준비
+                                                        </button> 
+                                                        <button id="tsc4time2" type="button" class="btn mb-1 btn-primary" style="width: 20%;margin-left: auto;margin-top: 20px;">발언
+                                                        </button> 
+                                                         <button id="tsc4time3"type="button" class="btn mb-1 btn-primary" style="width: 30%;background: white;color: black;border-color: white;margin-top: 20px; float: right;"></button>
+                                                    </div> 
+
+                                                </div>
 
 
                                             </div>
@@ -371,7 +408,7 @@
                                             <!-- <h4 class="card-title">1.성조선택</h4> -->
                                             <div class="basic-form">
                                                     
-
+<h>PART5 준비중입니다.</h>
 
                                             </div>
                                         </div>
@@ -384,7 +421,7 @@
                                             <!-- <h4 class="card-title">1.성조선택</h4> -->
                                             <div class="basic-form">
                                                     
-
+<h>PART6 준비중입니다.</h>
 
                                             </div>
                                         </div>
@@ -397,12 +434,15 @@
                                             <!-- <h4 class="card-title">1.성조선택</h4> -->
                                             <div class="basic-form">
                                                     
-
+<h>PART7 준비중입니다.</h>
 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
+                                </div>
+                                
 
 
                             </div>
@@ -448,6 +488,8 @@
     <!-- hsk단어 -->
     <script src="js/hskcidian.js"></script>   
     <script src="js/fuxi.js"></script>  
+    
+    <script src="js/tsclizi.js"></script>  
     <script type="text/javascript">
         let today = new Date();   
 
@@ -456,414 +498,61 @@
     let date = today.getDate();  // 날짜
     let day = today.getDay();  // 요일
 
-    var xuesheng = ["김파랑","서지인","김궁민","임근영","손영신"];
-    
-    $("#mingzi").change(function(){
-        var mingzi = eval($("#mingzi").val());
-        if(mingzi == ""){
-            return;
+    //TSC 4예제 change 이벤트
+    $("#part4lizi").change(function(){
+        debugger;
+        var num = this.value;
+        if(num =='선택'){
+            $("#part4wenzhang").text("");
+        } else {
+            $("#part4wenzhang").text(tsc4lizi[num]);
         }
-        $("#fuxichang").empty();
         
-        makeword3(mingzi);
     })
 
-    function getInputDayLabel(param) {
-    
-    var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
-    
-    var today = new Date(param).getDay();
-    var todayLabel = week[today];
-    
-    return todayLabel;
-}
- 
- 
+    $("#tsc4time1").click(function(){
+        timerstart(tsc4time[0]);
+    }) 
 
-    function  makeword3(param){
-        var aaa = param[0][0];
-        var bbb = aaa.substring(0,4) + "-" + aaa.substring(4,6) + "-" +aaa.substring(6,8);
-        //2021년 12월 22일 일요일 에 배운 내용입니다.
-        var ccc = aaa.substring(0,4) + "년 " + aaa.substring(4,6)+  "월  " + aaa.substring(6,8) + "일  " + getInputDayLabel(bbb) + "에 배운 내용이에요~";
-         $("#fuxichang").append(
-           '<h4 id="lessontime" class="card-title" style="font-size: 10px;">' +  ccc  + '</h4>'  
-           ); 
-        for (var i = 0; i < param.length; i++) {
-            $("#fuxichang").append(
-                             '<button  type="button" class="btn mb-1 btn-primary" style="width: 85%;font-size: 1em;">'
-                +            '<p id="jieshi' + i +'" style="white-space: normal;">'
-                +            param[i][2]  
-                 +           '</p>'    
-                 +           '</button>'
-                 +           '<div id =""class="form-group" style="width: 85%;">'
-                     +           '<textarea id ="zhongwen'+ i + '" class="form-control bg-light jieshi" rows="15" placeholder="화이팅!" style="height: 60px; "></textarea>'
-                 +           '</div>'
-
-            );
-        }
-
-    }
-
-    $("#tosam2").click(function(){
-       var mingzi = eval($("#mingzi").val());
-
-       for (var i = 0; i < mingzi.length; i++) {
-            var idname = "#"+"zhongwen" + i
-            if($(idname).val() == ""){
-                $(idname).focus();    
-                alert("모든 문장을 작문 해주셔야해요~");
-                return false;
-            }
-       }
-       checkM2(checkMobile());
+    $("#tsc4time2").click(function(){
+        timerstart(tsc4time[1]);
     })
 
-    $("#ctrlCv").click(function(){
-        var ccc = year + "년 " + month +  "월  " + date + "일 " + getInputDayLabel( year+ "-" + month + "-" +date) +"\n";
-        var answer = ccc+ $("#mingzi").val()+"님께서 작문숙제를 하십니다. "+"\n\n";
-        var mingzi = eval($("#mingzi").val());
-        for (var i = 0; i < mingzi.length; i++) {
-            answer =  answer+ parseInt(i+1) + ". " + mingzi[i][2] +"\n\n\n";
-        }
-        copy(answer);
-        alert("복사완료~!");
-    })    
-    
-    function copy(text) { 
-        var input = document.createElement('textarea'); 
-        input.innerHTML = text; 
-        document.body.appendChild(input); 
-        input.select(); var result = document.execCommand('copy'); 
-        document.body.removeChild(input); 
-         console.log('Copied!');
-        return result; 
-    }
-
-
-
-    
-    $("#answer").click(function(){
-        var answer = "";
-        var mingzi = eval($("#mingzi").val());
-
-        for (var i = 0; i < mingzi.length; i++) {
-            answer =  answer+ $("#mingzi").val()+"님 "+ parseInt(i+1) + "번 답안 :" + mingzi[i][1] +"\n";
-        }
-        answer =  answer + "\n" +"당신의 양심을 믿습니다. "
-        alert(answer);    
-    })    
-    $("#textlotto0").click(function(){
-            $("#word").empty();   
-        })
-
-        $("#textlotto1").click(function(){
-            if (checkcondition() == "success"){
-                $("#wordlist,#textlist,#textpost").show();
-                makeword1();
-            }else {
-                alert("HSK종류와 단어수를 체크해주세요");
-            }         
-        })
-
-        $("#textlotto2").click(function(){
-            if (checkcondition() == "success"){
-                $("#wordlist,#textlist,#textpost").show();
-                makeword();
-            }else {
-                alert("HSK종류와 단어수를 체크해주세요");
-            }         
-        })
-
-
-
-        /*모달 mp3 재생*/
-         $(document).on('click', '.hskmp3' , function(){
-                        var hanzimp3 = "./ciyusound/" + $(this).attr("value") + ".mp3";
-
-                        var hskSound = new Audio(hanzimp3); // 오디오 객체 생성
-                        hskSound.play();
-                    });
-
-         
-         $("#tosam").click(function(){
-            if($(".textarea_editor").val()== "") {
-                alert("작문 내용을 적어주세요");
+    //TSC 4유형 change 이벤트
+    $("#part4juzi").change(function(){
+        debugger;
+        var num = this.value;
+        if(num =='선택'){
+            $("#part4daan").text("");
+        } else {
+            if( $("#part4daan").text() == ""){
+                $("#part4daan").text( tsc4juzi[num]);
             } else {
-                checkM(checkMobile());
-            }
-        })
-        /*추첨단어 버튼태그 생성*/
-        function makeword(){
-            $("#word").empty();
-            var hskdengji = $("#hskdengji").val();
-            var wordnum = parseInt($("#wordnum").val());
-
-            var wordlottonm = selectIndex(eval(hskdengji).length,wordnum);
-            for (var i = 0; i < wordnum; i++) {
-                    $("#word").append(
-                        '<button type="button" class="btn btn-info"style="margin-top: 10px; margin-right: 5px;"'
-                        +'pinyin="' + eval(hskdengji)[wordlottonm[i]][3] + '"'
-                        +'yisi="' + eval(hskdengji)[wordlottonm[i]][4] + '"'
-                        +'data-toggle="modal" data-target="#basicModal'+ i +'"'
-                        +'>'
-                        + eval(hskdengji)[wordlottonm[i]][2]
-                        +'</button>'   
-
-                        + '<div class="modal fade" id="basicModal'+ i +'">'
-                        +    '<div class="modal-dialog" role="document">'
-                        +        '<div class="modal-content">'
-                        +            '<div class="modal-header">'
-                        +                '<h5 class="modal-title">단어 복습</h5>'
-                        +                '<button type="button" class="close" data-dismiss="modal"><span>&times;</span>'
-                        +                '</button>'
-                        +            '</div>'
-                        +            '<div class="modal-body">'
-
-                        +            '<table class="table">'
-                        +                '<colgroup><col width="10%">'
-                        +                '<col width="30%">'
-                        +                '<col width="20%">'
-                        +                '<col width="30%">'
-                        +                '</colgroup>'
-                        +                '<tbody id="tablecontent">'
-                        +                    '<tr>'
-                        +                        '<td style="font-size: 20px;text-align: center;">'
-                        +                            '<a href="#none" class="hskyoutube" data-toggle="modal" data-target=".bd-example-modal-lg" value="啊">'
-                        +                                '<span class="badge badge-primary px-2">'
-                        +                                    '<i class="fab fa-youtube"></i>'
-                        +                                '</span>'
-                        +                            '</a>'
-                        +                        '</td>'
-                        +                        '<td style="font-size: 20px;text-align: center;">'
-                        +                            '<span class="hanzi_tab">'+ eval(hskdengji)[wordlottonm[i]][2]+'</span>'
-                        +                        '</td>'
-                        +                        '<td style="font-size: 20px;text-align: center;">'
-                        +                            '<span class="pinyin_tab">'
-                        +                                '<a href="#none" class="hskmp3" value="'+eval(hskdengji)[wordlottonm[i]][2]+'">'
-                        +                                   eval(hskdengji)[wordlottonm[i]][3]+'</a>'
-                        +                            '</span>'
-                        +                        '</td>'
-                        +                        '<td style="font-size: 20px;text-align: center;">'
-                        +                            '<span class="yisi_tab">'+eval(hskdengji)[wordlottonm[i]][4]+'</span>'
-                        +                        '</td>'
-                        +                    '</tr>'
-                        +                '</tbody>'
-                        +            '</table>'
-
-
-
-
-
-
-                        +    '</div>'
-                        +            '<div class="modal-footer">'
-                        +                '<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>'
-                        +            '</div>'
-                        +        '</div>'
-                        +    '</div>'
-                        +'</div>'
-
-
-                    )
+                $("#part4daan").text( $("#part4daan").text() + '\n\n'+tsc4juzi[num]);
             }
         }
+    })
 
-         
-        // const btn = document.querySelector('.btn');
-        //     btn.addEventListener('click', function() {
-        //         checkM(checkMobile());
-        //     });
+    //TSC 4유형 타이머 이벤트
 
-        function makeword1(){
-            var hskdengji = $("#hskdengji").val();
-            var wordnum = parseInt($("#wordnum").val());
-
-            var wordlottonm = selectIndex(eval(hskdengji).length,wordnum);
-            for (var i = 0; i < wordnum; i++) {
-                    $("#word").append(
-                        '<button type="button" class="btn btn-info"style="margin-top: 10px; margin-right: 5px;"'
-                        +'pinyin="' + eval(hskdengji)[wordlottonm[i]][3] + '"'
-                        +'yisi="' + eval(hskdengji)[wordlottonm[i]][4] + '"'
-                        +'data-toggle="modal" data-target="#basicModal'+ i +'"'
-                        +'>'
-                        + eval(hskdengji)[wordlottonm[i]][2]
-                        +'</button>'   
-
-                        + '<div class="modal fade" id="basicModal'+ i +'">'
-                        +    '<div class="modal-dialog" role="document">'
-                        +        '<div class="modal-content">'
-                        +            '<div class="modal-header">'
-                        +                '<h5 class="modal-title">단어 복습</h5>'
-                        +                '<button type="button" class="close" data-dismiss="modal"><span>&times;</span>'
-                        +                '</button>'
-                        +            '</div>'
-                        +            '<div class="modal-body">'
-
-                        +            '<table class="table">'
-                        +                '<colgroup><col width="10%">'
-                        +                '<col width="30%">'
-                        +                '<col width="20%">'
-                        +                '<col width="30%">'
-                        +                '</colgroup>'
-                        +                '<tbody id="tablecontent">'
-                        +                    '<tr>'
-                        +                        '<td style="font-size: 20px;text-align: center;">'
-                        +                            '<a href="#none" class="hskyoutube" data-toggle="modal" data-target=".bd-example-modal-lg" value="啊">'
-                        +                                '<span class="badge badge-primary px-2">'
-                        +                                    '<i class="fab fa-youtube"></i>'
-                        +                                '</span>'
-                        +                            '</a>'
-                        +                        '</td>'
-                        +                        '<td style="font-size: 20px;text-align: center;">'
-                        +                            '<span class="hanzi_tab">'+ eval(hskdengji)[wordlottonm[i]][2]+'</span>'
-                        +                        '</td>'
-                        +                        '<td style="font-size: 20px;text-align: center;">'
-                        +                            '<span class="pinyin_tab">'
-                        +                                '<a href="#none" class="hskmp3" value="'+eval(hskdengji)[wordlottonm[i]][2]+'">'
-                        +                                   eval(hskdengji)[wordlottonm[i]][3]+'</a>'
-                        +                            '</span>'
-                        +                        '</td>'
-                        +                        '<td style="font-size: 20px;text-align: center;">'
-                        +                            '<span class="yisi_tab">'+eval(hskdengji)[wordlottonm[i]][4]+'</span>'
-                        +                        '</td>'
-                        +                    '</tr>'
-                        +                '</tbody>'
-                        +            '</table>'
-
-
-
-
-
-
-                        +    '</div>'
-                        +            '<div class="modal-footer">'
-                        +                '<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>'
-                        +            '</div>'
-                        +        '</div>'
-                        +    '</div>'
-                        +'</div>'
-
-
-                    )
-            }
-        }
-
-
-        const selectIndex = (totalIndex, selectingNumber) => {
-          let randomIndexArray = []
-          for (i=0; i<selectingNumber; i++) {   //check if there is any duplicate index
-            randomNum = Math.floor(Math.random() * totalIndex)
-            if (randomIndexArray.indexOf(randomNum) === -1) {
-              randomIndexArray.push(randomNum)
-            } else { //if the randomNum is already in the array retry
-              i--
-            }
-          }
-          return randomIndexArray
-        }
-
-        function checkMobile(){
-            var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
-            if ( varUA.indexOf('android') > -1) {
-                //안드로이드
-                return "android";
-            } else if ( varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ) {
-                //IOS
-                return "ios";
+    function timerstart(param){
+        var time = param;
+        var x = setInterval(function() {        
+            if(time.toString().length == 2){
+                document.getElementById("tsc4time3").innerHTML = "00:" + time;
             } else {
-                //아이폰, 안드로이드 외
-                return "other";
+                document.getElementById("tsc4time3").innerHTML = "00:0" + time;
             }
-        }
-
-        //요일 구하기
-        function sumday(param){
-             var day = "";
-             switch (param){
-              case 0 :
-                 day = "일요일";
-                  break;
-              case 1 :
-                  day = "월요일";
-                  break;
-              case 2 :
-                  day = "화요일";
-                  break;
-                  
-              case 3 :
-                  day = "수요일";
-                  break;
-              case 4 :
-                  day = "목요일";
-                  break;
-              case 5 :
-                  day = "금요일";
-                  break;
-              case 6 :
-                  day = "토요일";
-                  break;    
+            
+            time--;
+            //타임아웃 시
+            if (time < 0) {
+            clearInterval(x); //setInterval() 실행을 끝냄
+            document.getElementById("tsc4time3").innerHTML = "시간초과";
             }
-            return day;
-        }
+    }, 1000);
 
-        function checkM(m){
-            var wordlist = '';
-            for (var i = 0; i < $(".btn-info").length; i++) {
-                wordlist = wordlist + $(".btn-info").eq(i).text()
-                if(i != $(".btn-info").length-1){
-                    wordlist = wordlist +', '
-                }
-            }
-
-
-            var message = //today.toLocaleString() + '\n'
-                             year + ' : ' + month + ' : ' + date + ' ' + sumday(day) + '\n' + 'HSK작문연습'+ '\n'+ '\n'
-                            + $("#hskdengji").val() + '\n'
-                            + wordlist + '\n' + '\n'
-                            + $(".textarea_editor").val()
-                            
-           // location.href = 'sms:' +'01056477662'+(m == 'ios' ? '&' : '?') + 'body='+ encodeURIComponent($(".textarea_editor").val());
-            location.href = 'sms:' +'01056477662'+(m == 'ios' ? '&' : '?') + 'body='+ encodeURIComponent(message);
-        }
-
-        function checkM2(m){
-            var classnum = $('.jieshi').length;
-            var message = year + ' : ' + month + ' : ' + date + ' ' + sumday(day) + '\n' + '드라마복습'+ '\n'+ '\n';
-
-            for (var i = 0; i < classnum; i++) {
-                    message = message + $("#"+"jieshi"+i).text() + '\n' + $("#"+"zhongwen"+i).val()+ '\n'+ '\n';
-                    
-            }    
-
-                            
-           // location.href = 'sms:' +'01056477662'+(m == 'ios' ? '&' : '?') + 'body='+ encodeURIComponent($(".textarea_editor").val());
-            location.href = 'sms:' +'01056477662'+(m == 'ios' ? '&' : '?') + 'body='+ encodeURIComponent(message);
-        }
-
-        function checkcondition(){
-            if( $("#hskdengji").val() =="선택" || $("#wordnum").val() =="선택"   ){
-                return "false"
-            } else {
-                return "success"
-            }       
-
-        }
-
-        // 함수형 프로그래밍 (두 날짜의 차이 )
-    var date1 = '20210910'
-    var date2 = '20210922'
-
-    console.log(
-      dateCon('20210910','20210922')
-    ); 
-
-    // 함수형 프로그래밍 (두 날짜의 차이 )
-    function dateCon(param1,param2){
-        var result = '';
-        result = parseInt(param2) - parseInt(param1);
-
-        return result;
-    }
+    } 
 
     </script>
 </body>
