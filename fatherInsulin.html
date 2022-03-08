@@ -282,6 +282,8 @@
     let month = today.getMonth() + 1;  // 월
     let date = today.getDate();  // 날짜
     let day = today.getDay();  // 요일
+    let hour = today.getHours();
+    let minute = today.getMinutes();
     var Insulin = 0;
     //var xuesheng = ["김파랑","서지인","김궁민","임근영","손영신"];
     
@@ -451,8 +453,8 @@
         function checkM(m){
 
             var message = //today.toLocaleString() + '\n'
-                             year + ' : ' + month + ' : ' + date + ' ' + sumday(day) + '\n' + '아빠가 '+ '\n'+ 
-                            + '분량의 인슐린을 주사하였습니다.';
+                             year + '년 ' + month + '월 ' + date + '일 ' + sumday(day) + ' ' +hour + '시 '+minute + '분 ' +'\n' + '아빠가 '+ '\n'
+                            + Insulin +"분량의 인슐린을 주사하였습니다.";
                             
            // location.href = 'sms:' +'01056477662'+(m == 'ios' ? '&' : '?') + 'body='+ encodeURIComponent($(".textarea_editor").val());
             location.href = 'sms:' +'01040212267'+(m == 'ios' ? '&' : '?') + 'body='+ encodeURIComponent(message);
