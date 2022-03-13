@@ -318,12 +318,20 @@
                                                         <option value="1">예제2 </option>
                                                         <option value="2">예제3 </option>
                                                         <option value="3">예제4 </option>
+                                                        <option value="5">예제5 녹음본O </option>
+                                                        <option value="6">예제6 녹음본O</option>
                                                     </select>
+
+                                                    <br/>
+                                                <audio id="audioon" src="" controls="controls" style="margin: auto; width: 85%; margin-top: 30px;">
+                                                    <embed srd="sound.wav">
+                                                </audio>
+
                                                 </div>
 
                                                 <h3 id="part4wenzhang"style="text-align: center; margin-top: 30px;"></h3>
-
-                                                <div class="form-row align-items-center" style= "margin-top: 60px;">
+                                                
+                                                <div class="form-row align-items-center" style= "margin-top: 60px; display:none;"> 
                                                     <button type="button" class="btn mb-1 btn-primary" style="width: 30%;background: white;color: black;border-color: white; ">유형</button>
                                                     <select class="custom-select mr-sm-2" id="part4juzi" 
                                                     style="width: 60%;height: 45px;margin-left: 3%;">
@@ -450,14 +458,22 @@
     let date = today.getDate();  // 날짜
     let day = today.getDay();  // 요일
 
+
     //TSC 4예제 change 이벤트
     $("#part4lizi").change(function(){
         debugger;
         var num = this.value;
         if(num =='선택'){
             $("#part4wenzhang").text("");
+        } else if(num =='0' || num =='1'||num =='2'||num =='3') {
+            $("#part4wenzhang").text(tsc4lizi[num]);
         } else {
             $("#part4wenzhang").text(tsc4lizi[num]);
+            $("#part4daan").text( tsc4juzi[num]);
+            var c = "./sound/tsc/tsc-4-" + num +".mp3";
+
+                        $("#audioon").attr('src',c);
+                        //$("#audioon").attr('autoplay','autoplay');
         }
         
     })
