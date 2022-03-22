@@ -470,10 +470,12 @@
         } else {
             $("#part4wenzhang").text(tsc4lizi[num]);
             $("#part4daan").text( tsc4juzi[num]);
-            var c = "./sound/tsc/tsc-4-" + num +".mp3";
+            var hanzimp3 = "./sound/tsc/tsc-4-" + num +".mp3";
 
-                        $("#audioon").attr('src',c);
+                       //$("#audioon").attr('src',c);
                         //$("#audioon").attr('autoplay','autoplay');
+                        var tscSound = new Audio(hanzimp3); // 오디오 객체 생성
+                        tscSound.play();
         }
         
     })
