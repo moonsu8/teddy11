@@ -249,37 +249,30 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="card-title">
-                                    <h4>드라마 단어검색</h4>
+                                    <h4>1. 드라마 선택</h4>
                                 </div>
 
                                 <div class="basic-dropdown">
-                                    <div class="dropdown">
-                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dropdown button</button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Link 1</a> 
-                                            <a class="dropdown-item" href="#">Link 2</a> 
-                                            <a class="dropdown-item" href="#">Link 3</a>
+                                    <div class="dropdown" style="width: 100px; float: left;">
+                                        <button id = "btnDramaNm" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">드라마</button>
+                                        <div id = "SelectDramaNm" class="dropdown-menu">
+                                            
                                         </div>
-                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dropdown button</button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Link 1</a> 
-                                            <a class="dropdown-item" href="#">Link 2</a> 
-                                            <a class="dropdown-item" href="#">Link 3</a>
+                                          
+                                       
+                                    </div>
+                                </div>
+
+                                <div class="basic-dropdown">
+                                    <div class="dropdown" style="width: 100px; float: left;">
+                                        <button id = "btnDramaEpi"type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">에피소드</button>
+                                        <div id = "SelectDramaEpi"class="dropdown-menu">
+                                          
                                         </div>
                                     </div>
                                 </div>
 
 
-                                <!-- <div>
-                                    <input id="searchciyu" type="text" class="tdl-new2 form-control" placeholder="중국어를 입력해주세요" required style="
-                                        width: 70%; margin-right: 0px; float: left;">
-                                    <button id = "searchbutton" type="button" class="btn mb-1 btn-flat btn-primary" style="width: 30%;">검색</button>
-                                </div>
-                                <div id = "aaaaa">
-                                    <input id="searchpicture1" type="text" class="tdl-new2 form-control" placeholder="병음 입력해주세요" required="" style="width: 30%; margin-right: 0px;float: left;" onkeypress="if( event.keyCode == 13 ){checkpassword();}">
-                                    <button id="searchpicbutton" type="button" class="btn mb-1 btn-flat btn-primary" style="width: 30%;">검색</button>
-                                    <input id="searchpicture2" type="text" class="tdl-new2 form-control" required="" style="width: 20%; margin-right: 10px; float: left; margin-left: 10px;">
-                                </div> -->
                             </div>
                         </div>
 
@@ -329,7 +322,7 @@
                     <div class="card-body"id = "moviecidian">
                         <h3 class="card-title text-white">스크린중국어를 위한</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white">영화로 중국어 공부</h2>
+                            <h2 class="text-white" id = "epiname">영화로 중국어 공부</h2>
                             <p class="text-white mb-0">Teddy CHINESE</p>
                         </div>
                         <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
@@ -339,7 +332,18 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-title">
-                            <h4>재생 버튼 클릭</h4>
+                            <div class="general-button">
+                                <button id = "btnPrev" type="button" class="btn mb-1 btn-primary" style="width: 33%;">Prev</button>
+                                <button id = "btnReload" type="button" class="btn mb-1 btn-primary" style="width: 31%;">Reload</button>
+                                <button id = "btnNext" type="button" class="btn mb-1 btn-primary" style="width: 33%; ">Next</button>
+                            </div>
+
+                            <div class="general-button">
+                                <button id = "btnStart" type="button" class="btn mb-1 btn-warning" style="width: 33%;" time>Start</button>
+                                <button id = "btnSearch" type="button" class="btn mb-1 btn-warning" style="width: 31%;">Search</button>
+                                <button id = "btnEnd" type="button" class="btn mb-1 btn-warning" style="width: 33%; "time>End</button>
+                            </div>    
+                            
                         </div>
                         <div class="table-responsive">
                             <table class="table">
@@ -403,15 +407,21 @@
     <script src="js/gleek.js"></script>
     <script src="js/styleSwitcher.js"></script>
 
-    <script src="js/pinyinpicture.js"></script>
+    <!-- 추가건 -->
+    <!-- 상단 전체 영화 콤보박스 DATA -->
+    <script src="js/movieList.js"></script>  
 
-<!-- 추가건 -->
-    <script src="js/alldata.js"></script>
-    <script src="js/moviecidian.js"></script>
-    <script src="js/100qiji.js"></script>
+    <!-- 他来了 请闭眼 대본 DATA -->
     <script src="js/talaile.js"></script>
 
+
     <script type="text/javascript">
+
+    
+    var XianzaiengName  = "";    // talaile
+    var XianzaikornName = "";    // 타래료 칭폐안
+    var Xianzaiepisode  = "";    // 1
+    var Xianzaiurl      = "";    // OuxmeMc_ZJM        
         
 // 오늘 요일 설정 
     var time = 0;
@@ -467,31 +477,78 @@
      $("#aaaaa").hide();
 
     $(document).ready(function () {
-        /*$(".btn_play").on("click", function () {
-            youTubePlayer1.playVideo();//재생
-        });
-        $(".btn_stop").on("click", function () {
-            youTubePlayer1.stopVideo();//정지
-        });
-        $(".btn_pause").on("click", function () {
-            youTubePlayer1.pauseVideo();//일시정지
-        });
-*/
-       /* for (var i=0 ; i<10 ; i++) {
-        //캐러실 내용 입력
-        var a = "#" + "wenti" + i;
-        $(a).text(alldata[thisdate-1][i][3]);
-        $(a).children('p').text(alldata[thisdate-1][i][4]); 
-        //캐러셀 사진 입력
 
+        // 상단 네비 강제로 줄이기
+        $(".hamburger").trigger("click");
 
+        // 왼쪽 드라마 에피소드 콤보박스 세팅
+        setDrama("1");
+        setDrama("2", $("#SelectDramaNm").find('a:eq(0)').attr("value"));
+        
 
-        var picnum = ("images/").concat(thisdate,"0",i,".jpg");
-        $(a).parent().parent().children('img').attr('src',picnum)
-          }*/
     });
 
     //클릭이벤트
+
+    // 시작버튼 클릭이벤트
+    $("#btnStart").click(function(){                     
+        var secondTime = Math.floor(youTubePlayer1.getCurrentTime());//1914
+        
+        $(this).text(humanReadable(secondTime));
+        $(this).attr('time',secondTime)
+
+    
+    })
+
+    // 종료버튼 클릭이벤트
+    $("#btnEnd").click(function(){                     
+        var secondTime = Math.floor(youTubePlayer1.getCurrentTime());//1914
+        
+        $(this).text(humanReadable(secondTime));
+        $(this).attr('time',secondTime)
+    
+    })
+
+    // Search버튼 클릭이벤트
+    $("#btnSearch").click(function(){    
+        if( $("#btnStart").attr('time') ==""){
+            alert("startTime을 설정해주세요");
+            return false;
+        }
+
+        if( $("#btnEnd").attr('time') ==""){
+            alert("endTime을 설정해주세요");
+            return false;
+        }
+
+
+        var movNm = XianzaiengName + Xianzaiepisode;      // talaile + 1
+
+        var movData =  eval(movNm);
+
+        $("#tablecontent").empty();
+
+        for (var i = 0; i < movData.length; i++) {
+            var movTime =  Number(movData[i][0].substr(0,2)) * 60 
+                           + Number(movData[i][0].substr(3,2));
+
+            if( Number( $("#btnStart").attr('time')) < movTime 
+                && Number( $("#btnEnd").attr('time')) > movTime ){
+
+                $("#tablecontent").append(
+                    '<tr>' +
+                    '<td>' + movData[i][1] + '</td>' +
+                    '<td>' + movData[i][3] + '</td>' +
+                    '<td>' + '<a href="#none" id="playbutton" value="' + i + '">'
+                    + '<span class="badge badge-primary px-2"><i class="fab fa-youtube"></i></span></a></td>' +
+                    '<tr>'
+                );
+            }
+
+        }
+
+
+    })    
 
 
     $(document).on('click', '#playbutton' , function(){
@@ -526,6 +583,107 @@
         
     });
 
+    // 
+
+
+    // 에피소드 클릭시 setting
+    $(document).on('click', '.aTagDramaEpi' , function(){
+        XianzaiengName  = $(this).attr('engName');    // talaile
+        XianzaikornName = $(this).attr('korName');    // 타래료 칭폐안
+        Xianzaiepisode  = $(this).attr('episode');    // 1
+        Xianzaiurl      = $(this).attr('url'    );    // OuxmeMc_ZJM
+
+        $("#epiname").text(XianzaikornName + " " + Xianzaiepisode +" 화");
+        
+        var movNm = XianzaiengName + Xianzaiepisode;      // talaile + 1
+
+        var movData =  eval(movNm);
+
+        var url = "https://www.youtube.com/embed/" + Xianzaiurl + "?rel=0&enablejsapi=1&widgetid=1";
+        //youTubePlayer1.f.src = url;
+        $("#youTubePlayer1").attr("src",url);
+        setTimeout(function() {
+              youTubePlayer1.seekTo(time, true);
+        youTubePlayer1.playVideo(); 
+            }, 1200);
+
+
+    });
+
+    // 왼쪽 상단 드라마 단어검색 콤보박스 설정
+    // param "1" 드라마종류 
+    // param "2" 에피소드
+    // param2 - 드라마 명
+    function setDrama(param, dramaNm){
+
+        switch(param){
+        case "1" : //  드라마종류
+
+            var keys = Object.keys(movieList);
+
+            for (var i = 0; i < keys.length; i++) {
+                
+                $("#SelectDramaNm").append(
+                
+                    '<a href="#none" class="dropdown-item aTagDramaNm" value="' + keys[i] + '">'
+                    + movieList[keys[i]][0].name
+                    + '</a>'
+
+                );
+            }
+
+            break;
+        case "2" : //  에피소드
+            
+            var keys = Object.keys(movieList);
+
+            for (var i = 0; i < keys.length; i++) {
+                if( dramaNm == keys[i]){
+                    for (var j = 0; j < movieList[keys[i]].length; j++) {
+                        $("#SelectDramaEpi").append( 
+                            '<a href="#none" class="dropdown-item aTagDramaEpi" korName="' 
+                            + movieList[keys[i]][j].name 
+                            + '" '
+                            + 'engName= "'
+                            + dramaNm
+                             + '" '
+                            + 'episode= "'
+                            + movieList[keys[i]][j].episode 
+                            + '" '
+                            + 'url= "'
+                            + movieList[keys[i]][j].url 
+                            + '">'
+                            + movieList[keys[i]][j].episode + " 화"
+                            + '</a>'
+
+                        );
+                    }    
+
+                }    
+                    
+            }    
+
+            break;
+            
+
+        }
+    }
+
+    // 왼쪽 상단 드라마 단어검색 콤보박스 초기화
+    function initDrama(param){
+
+        switch(param){
+        case "1" : //  드라마종류
+            $('#SelectDramaNm').empty();
+            break;
+        case "2" : //  에피소드
+            $('#SelectDramaEpi').empty();
+            break;
+            
+
+        }
+    }
+
     //단어검색 클릭이벤트
     $("#searchbutton").click(function(){                     
         
@@ -550,25 +708,6 @@
                     );
             }
         }
-    })
-
-    //단어사진 페이지 클리 이벤트
-    $("#searchpicbutton").click(function(){                     
-        
-
-        var picture1 = $("#searchpicture1").val();
-        if(picture1==""){
-            alert("단어사진을 입력해주세요");
-        } 
-
-        var aaa =  eval("pinyinpicture." + picture1);
-        if(aaa){
-            $("#searchpicture2").val(aaa);     
-        } else {
-            $("#searchpicture2").val("");      
-        }
-        
-
     })
 
     //무비재생 클릭이벤트
@@ -602,6 +741,24 @@
             $("#searchpicture2").val("");      
         }
     }
+
+
+    function humanReadable(seconds) {
+        if (seconds < 61) {
+            return '00:' + addZero(seconds)
+        }
+        // sec
+        var hours = Math.floor(seconds/3600)
+        var mins = Math.floor((seconds - hours*3600)/60)
+        var secs = seconds - hours*3600 - mins*60
+        return addZero(hours) + ':' + addZero(mins) + ':' + addZero(secs)
+        
+        function addZero(num) {
+            return ((num < 10) ? '0' : '') + num
+        }
+    }
+
+
 
     </script>
 
