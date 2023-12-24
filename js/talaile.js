@@ -3008,7 +3008,7 @@ var talaile9 =
 	["07:34","法庭会判他有罪吗","fǎ tíng huì pàn tā yǒu zuì ma ","법원이 그의 유죄를 판결할까요?","타래료 칭폐안 9화","OuxmeMc_ZJM"],
 	["07:41","我相信 警察一定会还我们的一个公道","wǒ xiàng xìn  jǐng chá yī dìng huì hái wǒ men de yī gè gōng dào ","난 경찰이 왕완미에게 정의를 베풀거라고 믿어.","타래료 칭폐안 9화","OuxmeMc_ZJM"],
 	["08:21","他走向裴泽的房间 裴泽是凶手 那一定就是他","tā zǒu xiàng péi zé de fáng jiān  péi zé shì xiōng shǒu  nà yī dìng jiù shì tā ","배택의 방으로 가고 있어. 배택이 살인자야.","타래료 칭폐안 9화","OuxmeMc_ZJM"],
-	["08:36","薄教授 行动吧","báo jiāo shòu  háng dòng ba ","보 교수님. 조치를 취하죠.","타래료 칭폐안 9화","OuxmeMc_ZJM"],
+	["08:25","薄教授 行动吧","báo jiāo shòu  háng dòng ba ","보 교수님. 조치를 취하죠.","타래료 칭폐안 9화","OuxmeMc_ZJM"],
 	["08:26","等等 再观察一下","děng děng  zài guān chá yī xià ","기다려요. 좀 더 지켜봐요.","타래료 칭폐안 9화","OuxmeMc_ZJM"],
 	["08:36","还不行动吗","hái bú háng dòng ma ","아직이요?","타래료 칭폐안 9화","OuxmeMc_ZJM"],
 	["08:41","不 不是他","bú  bú shì tā ","그가 아니에요.","타래료 칭폐안 9화","OuxmeMc_ZJM"],

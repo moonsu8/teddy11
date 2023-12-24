@@ -280,7 +280,7 @@
                         <div class="card-body">
                             <div id="youTubePlayer1"></div><!-- 플레이어를 불러올 영역-->
                             <br/>
-                        <div class="card">
+                        <!-- <div class="card">
                             <div class="basic-form">
                                 <div id="centertext" class="form-row align-items-center">
                                     <div  class="col-auto my-1" style="width: 300px;">
@@ -296,7 +296,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <br/>
                         <!-- <h3><a id="movieon" href="#none" class="button">반복듣기</a></h3> -->
                         <div id="centertext">        
@@ -333,9 +333,9 @@
                     <div class="card-body">
                         <div class="card-title">
                             <div class="general-button">
-                                <button id = "btnPrev" type="button" class="btn mb-1 btn-primary" style="width: 33%;">Prev</button>
-                                <button id = "btnReload" type="button" class="btn mb-1 btn-primary" style="width: 31%;">Reload</button>
-                                <button id = "btnNext" type="button" class="btn mb-1 btn-primary" style="width: 33%; ">Next</button>
+                                <button id = "btnPrev" type="button" class="btn mb-1 btn-primary" sink="" rowNum="" style="width: 33%;">Prev</button>
+                                <button id = "btnReload" type="button" class="btn mb-1 btn-primary"sink="" rowNum="" style="width: 31%;">Reload</button>
+                                <button id = "btnNext" type="button" class="btn mb-1 btn-primary"sink="" rowNum="" style="width: 33%; ">Next</button>
                             </div>
 
                             <div class="general-button">
@@ -349,9 +349,21 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>중문</th>
-                                        <th>뜻</th>
-                                        <th>재생</th>
+                                        <th><!-- 중문 -->
+                                            <div class="email-checkbox">
+                                                <input type="checkbox" id="chk2">
+                                                <label class="toggle" for="chk2"></label>
+                                            </div>
+                                        </th>
+                                        <th><!-- 뜻 -->
+                                           <div class="email-checkbox">
+                                                <input type="checkbox" id="chk3">
+                                                <label class="toggle" for="chk3"></label>
+                                            </div>     
+
+
+                                        </th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody id = "tablecontent">
@@ -422,6 +434,10 @@
     var XianzaikornName = "";    // 타래료 칭폐안
     var Xianzaiepisode  = "";    // 1
     var Xianzaiurl      = "";    // OuxmeMc_ZJM        
+
+    //var Xianplaysink      = "";    // (초)        
+
+
         
 // 오늘 요일 설정 
     var time = 0;
@@ -537,9 +553,12 @@
 
                 $("#tablecontent").append(
                     '<tr>' +
-                    '<td>' + movData[i][1] + '</td>' +
-                    '<td>' + movData[i][3] + '</td>' +
-                    '<td>' + '<a href="#none" id="playbutton" value="' + i + '">'
+                    '<td class = "zhongwenTd">' + movData[i][1] + '</td>' +
+                    '<td class = "yisiTd">' + movData[i][3] + '</td>' +
+                    '<td>' 
+                    + '<a href="#none" class="playbutton" time="' + movTime + '"'
+                    + ' rowNum = "' + i + '"'
+                    + '">'
                     + '<span class="badge badge-primary px-2"><i class="fab fa-youtube"></i></span></a></td>' +
                     '<tr>'
                 );
@@ -550,36 +569,93 @@
 
     })    
 
+    // Reload 버튼 클릭 이벤트
+    $("#btnReload, #movieon").click(function(){    
 
-    $(document).on('click', '#playbutton' , function(){
-        youTubePlayer1.pauseVideo();
-        $("#pinyin").text("");
-        $("#hanzi").text("");
-        $("#jieshi").text("");
+        var movTime = Number ($("#btnReload").attr("sink"));
+        var url = "https://www.youtube.com/embed/" + Xianzaiurl + "?rel=0&enablejsapi=1&widgetid=1";
+        //youTubePlayer1.f.src = url;
+        //$("#youTubePlayer1").attr("src",url);
+        youTubePlayer1.seekTo(movTime-1, true);
+        setTimeout(function() {
+            
+            youTubePlayer1.playVideo(); 
+        }, 1200);
+        
+        // setButtonSink(rowNum);
 
-        num ="";
-        num = Number($(this).attr('value'));
+    })    
 
-        $("#pinyin").text(dianying[num][2]);
-        $("#hanzi").text(dianying[num][1]);
-        $("#jieshi").text(dianying[num][3]);
+    // btnPrev 버튼 클릭 이벤트
+    $("#btnPrev").click(function(){    
 
+        var rowNum  = Number ($("#btnPrev").attr("rownum"));
+        var movTime = Number ($("#btnPrev").attr("sink"));
+        var url = "https://www.youtube.com/embed/" + Xianzaiurl + "?rel=0&enablejsapi=1&widgetid=1";
+
+        youTubePlayer1.seekTo(movTime-1, true);
+        setTimeout(function() {
+            
+            youTubePlayer1.playVideo(); 
+        }, 1200);
+
+        setButtonSink(rowNum);
+    })  
+
+    // btnNext 버튼 클릭 이벤트
+    $("#btnNext").click(function(){    
+
+        var rowNum  = Number ($("#btnNext").attr("rownum"));
+        var movTime = Number ($("#btnNext").attr("sink"));
+        var url = "https://www.youtube.com/embed/" + Xianzaiurl + "?rel=0&enablejsapi=1&widgetid=1";
+
+        youTubePlayer1.seekTo(movTime-1, true);
+        setTimeout(function() {
+            
+            youTubePlayer1.playVideo(); 
+        }, 1200);
+
+        setButtonSink(rowNum);
+    })  
+
+    // 중문 체크박스 클릭 이벤트
+    $(document).on('click', '#chk2' , function(){
+        if( $('#chk2').is(':checked')  ){
+            $('.zhongwenTd').attr('style', "display:none;");     
+        } else {
+             $('.zhongwenTd').attr('style', "display:'';"); 
+        }
+    });
+    
+    // 뜻 체크박스 클릭 이벤트
+    $(document).on('click', '#chk3' , function(){
+        if( $('#chk3').is(':checked')  ){
+            
+            $('.yisiTd').attr('style', "display:none;"); 
+        } else {
+             
+             $('.yisiTd').attr('style', "display:'';"); 
+        }
+    });
+
+
+    // 재생버튼 클릭 이벤트
+    $(document).on('click', '.playbutton' , function(){
+
+        var movTime =  Number ( $(this).attr('time'));
+        var rowNum =  Number ( $(this).attr('rowNum'));
         fnMove();
 
-        time = 0;
-        var time1 =  Number(dianying[num][0].substr(0, 2));
-        var time2 =  Number(dianying[num][0].substr(3, 2));
-        time = time1*60 + time2 -1;
-
-        var url = "https://www.youtube.com/embed/" + dianying[num][5] + "?rel=0&enablejsapi=1&widgetid=1";
+        var url = "https://www.youtube.com/embed/" + Xianzaiurl + "?rel=0&enablejsapi=1&widgetid=1";
         //youTubePlayer1.f.src = url;
-        $("#youTubePlayer1").attr("src",url);
+        //$("#youTubePlayer1").attr("src",url);
+        youTubePlayer1.seekTo(movTime-1, true);
         setTimeout(function() {
-              youTubePlayer1.seekTo(time, true);
-        youTubePlayer1.playVideo(); 
-            }, 1200);
+            
+            youTubePlayer1.playVideo(); 
+        }, 1200);
         
-
+        setButtonSink(rowNum);
         
     });
 
@@ -603,13 +679,61 @@
         //youTubePlayer1.f.src = url;
         $("#youTubePlayer1").attr("src",url);
         setTimeout(function() {
-              youTubePlayer1.seekTo(time, true);
-        youTubePlayer1.playVideo(); 
-            }, 1200);
+              youTubePlayer1.seekTo(0, true);
+              youTubePlayer1.playVideo(); 
+        }, 1200);
 
+        $("#tablecontent").empty();
 
     });
 
+    // Prev Reload Next 버튼에 싱크정보 설정
+    // param 현재 영화의 rowNum sink
+    function setButtonSink(rowNum){
+        var movNm = XianzaiengName + Xianzaiepisode;      // talaile + 1
+
+        var movData =  eval(movNm);
+
+        for (var i = 0; i < movData.length; i++) {
+            
+            if(rowNum == i){
+                var movTime =  Number(movData[i][0].substr(0,2)) * 60 
+                             + Number(movData[i][0].substr(3,2));
+
+                $("#btnReload").attr("sink",movTime);
+                $("#btnReload").attr("rowNum",i);
+                
+                $("#pinyin").text("");
+                $("#hanzi").text("");
+                $("#jieshi").text("");
+
+                $("#pinyin").text(movData[i][2]);
+                $("#hanzi").text(movData[i][1]);
+                $("#jieshi").text(movData[i][3]);
+
+                if( rowNum != 0){
+                    
+                    var movTimePrev =  Number(movData[i-1][0].substr(0,2)) * 60 
+                                     + Number(movData[i-1][0].substr(3,2));
+
+                    $("#btnPrev").attr("sink",movTimePrev);
+                    $("#btnPrev").attr("rowNum",i-1);
+                }
+
+                if( rowNum != movData.length){
+                    
+                    var movTimeNext =  Number(movData[i+1][0].substr(0,2)) * 60 
+                                     + Number(movData[i+1][0].substr(3,2));
+
+                    $("#btnNext").attr("sink",movTimeNext);
+                    $("#btnNext").attr("rowNum",i+1);
+                }
+
+            }
+
+        }
+
+    }
     // 왼쪽 상단 드라마 단어검색 콤보박스 설정
     // param "1" 드라마종류 
     // param "2" 에피소드
@@ -684,64 +808,10 @@
         }
     }
 
-    //단어검색 클릭이벤트
-    $("#searchbutton").click(function(){                     
-        
-
-        var ciyu = $("#searchciyu").val();
-        if(ciyu==""){
-            alert("단어를 입력해주세요");
-        } 
-        $("#tablecontent").empty();
-        
-
-        for (var i = 0; i < dianying.length; i++) {
-            if(dianying[i][1].indexOf(ciyu)!= -1){
-                
-                $("#tablecontent").append(
-                    '<tr>' +
-                    '<td>' + dianying[i][1] + '</td>' +
-                    '<td>' + dianying[i][3] + '</td>' +
-                    '<td>' + '<a href="#none" id="playbutton" value="' + i + '">'
-                    + '<span class="badge badge-primary px-2"><i class="fab fa-youtube"></i></span></a></td>' +
-                    '<tr>'
-                    );
-            }
-        }
-    })
-
-    //무비재생 클릭이벤트
-    $("#movieon").click(function(){                     
-
-        youTubePlayer1.seekTo(time, true);
-         
-        var speed = $("#inlineFormCustomSelect").val();
-        if(speed ==""){speed = 1.0;}
-        speed = Number(speed);
-        youTubePlayer1.setPlaybackRate(speed); // set to half speed
-
-        youTubePlayer1.playVideo();
-    })
-
     function fnMove(){
         var offset = $("#youTubePlayer1").offset();
         $('html, body').animate({scrollTop : offset.top}, 1200);
     }
-
-    function checkpassword(){
-        var picture1 = $("#searchpicture1").val();
-        if(picture1==""){
-            alert("단어사진을 입력해주세요");
-        } 
-
-        var aaa =  eval("pinyinpicture." + picture1);
-        if(aaa){
-            $("#searchpicture2").val(aaa);     
-        } else {
-            $("#searchpicture2").val("");      
-        }
-    }
-
 
     function humanReadable(seconds) {
         if (seconds < 61) {
