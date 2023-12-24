@@ -52,7 +52,15 @@ var movieList =
             "episode" : 10,
             "url" : "aWcjtjXmA5w"
         } 
-    ]
+    ],
+
+    "zhixianghe" : [
+        {
+            "name" :"보고싶어",
+            "episode" : 1,
+            "url" : "-CWFebE6fYg"
+        }
+    ]    
 
 
 }

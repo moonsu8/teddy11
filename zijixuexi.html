@@ -349,13 +349,13 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th><!-- 중문 -->
+                                        <th><!-- 중문 -->中
                                             <div class="email-checkbox">
                                                 <input type="checkbox" id="chk2">
                                                 <label class="toggle" for="chk2"></label>
                                             </div>
                                         </th>
-                                        <th><!-- 뜻 -->
+                                        <th><!-- 뜻 -->韩
                                            <div class="email-checkbox">
                                                 <input type="checkbox" id="chk3">
                                                 <label class="toggle" for="chk3"></label>
@@ -425,7 +425,8 @@
 
     <!-- 他来了 请闭眼 대본 DATA -->
     <script src="js/talaile.js"></script>
-
+    <!-- 只想和你 대본 DATA -->
+    <script src="js/zhixianghe.js"></script>
 
     <script type="text/javascript">
 
@@ -734,6 +735,14 @@
         }
 
     }
+
+    // 드라마 선택 버튼 클릭 이벤트
+    $(document).on('click', '.aTagDramaNm' , function(){
+        $("#SelectDramaEpi").empty();
+        setDrama("2", $(this).attr("value"));
+    })        
+    
+
     // 왼쪽 상단 드라마 단어검색 콤보박스 설정
     // param "1" 드라마종류 
     // param "2" 에피소드
