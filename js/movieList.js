@@ -54,6 +54,37 @@ var movieList =
         } 
     ],
 
+	"wodemimi" : [
+        {
+            "name" :"나의 비밀친구",
+            "episode" : 1,
+            "url" : "L8fqygGnnhE"
+        },
+        {
+            "name" :"나의 비밀친구",
+            "episode" : 2,
+            "url" : "kHEV-SiXB9g"
+        }
+    ],
+
+	"tadecheng" : [
+        {
+            "name" :"그녀의 세계",
+            "episode" : 1,
+            "url" : "aGNk0OLln5A"
+        },
+        {
+            "name" :"그녀의 세계",
+            "episode" : 2,
+            "url" : "ztB2xnOnjN4"
+        },
+        {
+            "name" :"그녀의 세계",
+            "episode" : 3,
+            "url" : "dcfxzD32z3c"
+        }
+    ],
+
     "zhixianghe" : [
         {
             "name" :"보고싶어",
