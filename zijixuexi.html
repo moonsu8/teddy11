@@ -20,7 +20,7 @@
 
         gtag('config', 'UA-159897918-1');
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
     <style>
             td, th，h1, h2, h3, h4, h5, a, p, span, li,.mb-1{
@@ -81,7 +81,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
+        <!-- <div class="nav-header">
             <div class="brand-logo">
                 <a href="index.html">
                     <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
@@ -91,7 +91,7 @@
                     </span>
                 </a>
             </div>
-        </div>
+        </div> -->
         <!--**********************************
             Nav header end
         ***********************************-->
@@ -99,7 +99,7 @@
         <!--**********************************
             Header start
         ***********************************-->
-        <div class="header">    
+        <!-- <div class="header">    
             <div class="header-content clearfix">
                 
                 <div class="nav-control">
@@ -152,7 +152,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
@@ -160,7 +160,7 @@
        <!--**********************************
             Sidebar start
         ***********************************-->
-        <div class="nk-sidebar">           
+        <!-- <div class="nk-sidebar">           
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="nav-label">========= 왕기초반 ===========</li>
@@ -232,7 +232,7 @@
                     </li>               
                 </ul>
             </div>
-        </div>
+        </div> -->
         <!--**********************************
             Sidebar end
         ***********************************-->
@@ -246,6 +246,17 @@
                 <!-- row -->
                 <div class="row">
                     <div class="col-lg-6">
+                        <div class="card gradient-3">
+                            <div class="card-body"id = "moviecidian">
+                                <h3 class="card-title text-white">스크린중국어를 위한</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white" id = "epiname">영화로 중국어 공부</h2>
+                                    <p class="text-white mb-0">Teddy CHINESE</p>
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
+                            </div>
+                        </div>
+
                         <div class="card">
                             <div class="card-body">
                                 <div class="card-title">
@@ -253,7 +264,7 @@
                                 </div>
 
                                 <div class="basic-dropdown">
-                                    <div class="dropdown" style="width: 100px; float: left;">
+                                    <div class="dropdown" style="width: 100px; float: left; margin-right: 40px;">
                                         <button id = "btnDramaNm" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">드라마</button>
                                         <div id = "SelectDramaNm" class="dropdown-menu">
                                             
@@ -277,7 +288,7 @@
                         </div>
 
                         <div class="card">
-                        <div class="card-body">
+
                             <div id="youTubePlayer1"></div><!-- 플레이어를 불러올 영역-->
                             <br/>
                         <!-- <div class="card">
@@ -297,10 +308,14 @@
                                 </div>
                             </div>
                         </div> -->
-                        <br/>
+                        <!-- <br/> -->
                         <!-- <h3><a id="movieon" href="#none" class="button">반복듣기</a></h3> -->
                         <div id="centertext">        
-                        <button id="movieon" type="button" class="btn mb-1 btn-rounded btn-warning">반복듣기</button>
+                        <!-- <button id="movieon" type="button" class="btn mb-1 btn-rounded btn-warning">반복듣기</button> -->
+                        <button id = "btnPrev" type="button" class="btn mb-1 btn-primary" sink="" rowNum="" style="width: 30%; float: left; margin-left: 2%;"><i class="fa-solid fa-backward"></i></button>
+                        <button id = "btnReload" type="button" class="btn mb-1 btn-primary"sink="" rowNum="" style="width: 32%;"><i class="fa-solid fa-rotate-right"></i></button>
+                        <button id = "btnNext" type="button" class="btn mb-1 btn-primary"sink="" rowNum="" style="width: 30%; float: right; margin-Right: 2%; "><i class="fa-solid fa-forward"></i></button>
+
                         </div>
                         <br/>
                         <div id= "centertext">
@@ -312,13 +327,13 @@
 
                         </p>
 
-                        </div>
+
                     </div>
                 </div>
 
 
             <div class="col-lg-6">
-                <div class="card gradient-3">
+               <!--  <div class="card gradient-3">
                     <div class="card-body"id = "moviecidian">
                         <h3 class="card-title text-white">스크린중국어를 위한</h3>
                         <div class="d-inline-block">
@@ -327,16 +342,16 @@
                         </div>
                         <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="card">
                     <div class="card-body">
                         <div class="card-title">
-                            <div class="general-button">
-                                <button id = "btnPrev" type="button" class="btn mb-1 btn-primary" sink="" rowNum="" style="width: 33%;">Prev</button>
-                                <button id = "btnReload" type="button" class="btn mb-1 btn-primary"sink="" rowNum="" style="width: 31%;">Reload</button>
-                                <button id = "btnNext" type="button" class="btn mb-1 btn-primary"sink="" rowNum="" style="width: 33%; ">Next</button>
-                            </div>
+                            <!-- <div class="general-button">
+                                <button id = "btnPrev" type="button" class="btn mb-1 btn-primary" sink="" rowNum="" style="width: 31%;"><i class="fa-solid fa-backward"></i></button>
+                                <button id = "btnReload" type="button" class="btn mb-1 btn-primary"sink="" rowNum="" style="width: 31%;"><i class="fa-solid fa-rotate-right"></i></button>
+                                <button id = "btnNext" type="button" class="btn mb-1 btn-primary"sink="" rowNum="" style="width: 33%; "><i class="fa-solid fa-forward"></i></button>
+                            </div> -->
 
                             <div class="general-button">
                                 <button id = "btnStart" type="button" class="btn mb-1 btn-warning" style="width: 33%;" time>Start</button>
@@ -349,18 +364,22 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th><!-- 중문 -->中
-                                            <div class="email-checkbox">
+                                        <th id="chk2" showCd = "false"><!-- 중문 -->
+                                            <i id="chk2eyeOpen" class="fa-solid fa-eye"></i>
+                                            <i id="chk2eyeClose"class="fa-solid fa-eye-slash" style="display: none;"></i>
+                                           <!--  <div class="email-checkbox">
                                                 <input type="checkbox" id="chk2">
                                                 <label class="toggle" for="chk2"></label>
-                                            </div>
+                                            </div> -->
                                         </th>
-                                        <th><!-- 뜻 -->韩
-                                           <div class="email-checkbox">
+                                        <th id="chk3" showCd = "false"><!-- 뜻 -->
+                                            <i id="chk3eyeOpen" class="fa-solid fa-eye"></i>
+                                            <i id="chk3eyeClose" class="fa-solid fa-eye-slash" style="display: none;"></i>
+                                          <!--  <div class="email-checkbox">
                                                 <input type="checkbox" id="chk3">
                                                 <label class="toggle" for="chk3"></label>
                                             </div>     
-
+ -->
 
                                         </th>
                                         <th></th>
@@ -624,22 +643,34 @@
         setButtonSink(rowNum);
     })  
 
+
     // 중문 체크박스 클릭 이벤트
     $(document).on('click', '#chk2' , function(){
-        if( $('#chk2').is(':checked')  ){
-            $('.zhongwenTd').attr('style', "display:none;");     
+        if( $('#chk2').attr('showCd') == "true"  ){
+            $('#chk2eyeOpen').hide();
+            $('#chk2eyeClose').show();
+            $('#chk2').attr('showCd',"false");
+            $('.zhongwenTd').attr('style', "display:none;"); 
+
         } else {
+            $('#chk2eyeOpen').show(); 
+            $('#chk2eyeClose').hide();
+            $('#chk2').attr('showCd',"true");
              $('.zhongwenTd').attr('style', "display:'';"); 
         }
     });
     
     // 뜻 체크박스 클릭 이벤트
     $(document).on('click', '#chk3' , function(){
-        if( $('#chk3').is(':checked')  ){
-            
+         if( $('#chk3').attr('showCd') == "true"  ){
+            $('#chk3eyeOpen').hide();
+            $('#chk3eyeClose').show();
+            $('#chk3').attr('showCd',"false");
             $('.yisiTd').attr('style', "display:none;"); 
         } else {
-             
+               $('#chk3eyeOpen').show(); 
+            $('#chk3eyeClose').hide();
+            $('#chk3').attr('showCd',"true");
              $('.yisiTd').attr('style', "display:'';"); 
         }
     });
@@ -697,6 +728,8 @@
         $("#btnEnd").text("End");       // 끝버튼 초기화
         $("#btnEnd").attr("time","");   // 끝버튼 초기화
 
+        $("#btnDramaEpi").text( $(this).text() );   
+
     });
 
     // Prev Reload Next 버튼에 싱크정보 설정
@@ -751,6 +784,7 @@
     $(document).on('click', '.aTagDramaNm' , function(){
         $("#SelectDramaEpi").empty();
         setDrama("2", $(this).attr("value"));
+        $("#btnDramaNm").text( $(this).text() );     
     })        
     
 
