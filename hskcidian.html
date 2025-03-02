@@ -276,14 +276,13 @@
                         </div>
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">1.HSK 단어 선택</h4>
+                                <h4 class="card-title">HSK LEVEL</h4>
                                 <div class="basic-form">
                                     <form>
                                         <div class="form-row align-items-center">
-                                            <div class="col-auto my-1" style="width: 300px;">
-                                                <label class="mr-sm-2">HSK 단어를 선택해주세요!</label>
-                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect1">
-                                                    <option selected="selected">Choose...</option>
+                                            <div class="col-auto my-1" style="width: 500px;">
+                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect1" style="width: 30%;">
+                                                    <option selected="selected">Choose</option>
                                                     <option value="1">HSK1</option>
                                                     <option value="2">HSK2</option>
                                                     <option value="3">HSK3</option>
@@ -294,7 +293,12 @@
                                                 <br>
                                                 <br>
 
-                                                <button id = "exceldownload" type="button" class="btn mb-1 btn-rounded btn-warning" style="width: 300px;  display: none;"><span class="btn-icon-left"><i class="fa fa-download color-warning"></i> </span>Excel Download</button>
+                                                <button id = "exceldownload" type="button" class="btn mb-1 btn-rounded btn-warning" style="width: 180px;color: white; margin-right: 10px; float: left;">
+                                                                Excel Download
+                                                </button>
+                                                <button id = "hskAi" type="button" data-toggle="modal" class="btn mb-1 btn-rounded btn-warning" data-target=".bd-example-modal-lg-ai"style="width: 180px;color: white;">
+                                                                HSK AI
+                                                </button>
                                             </div>
                                         </div>
                                     </form>
@@ -460,6 +464,397 @@
                         </div>
                     </div>
                 </div>
+
+
+                <div id="youtubemodal"class="modal fade bd-example-modal-lg-ai" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" style="height: 80%;">
+                        <div class="modal-content" style="height: 80%;">
+                            <div class="modal-header">
+                                <h5 class="modal-title">AI</h5>
+                                <button type="button" class="close" onclick="stopyoutube()" data-dismiss="modal"><span>&times;</span>
+                                </button>
+                            </div>
+                            <!-- <div class="modal-body">Modal body text goes here.</div> -->
+
+
+
+                            <div class="col-lg-12">
+                                <div class="card mb-2" style="width: 25%; float: left;">
+                                    <div class="card-body" style="padding: 10px;">
+                                        <h4 class="card-title">HSK</h4>
+                                        <div class="basic-form">
+                                            <form>
+                                                <div class="form-group mb-2">
+                                                    <div class="radio mb-2">
+                                                        <label>
+                                                            <input number = "4" id = "rdo_hsk4" type="radio" name="optradio"disabled="disabled"style="margin-right: 5px;">HSK4</label>
+                                                    </div>
+                                                    <div class="radio mb-2">
+                                                        <label>
+                                                            <input number = "5" id = "rdo_hsk5" type="radio" name="optradio"style="margin-right: 5px;">HSK5</label>
+                                                    </div>
+                                                    <div class="radio disabled">
+                                                        <label>
+                                                            <input number = "6" id = "rdo_hsk6" type="radio" name="optradio"disabled="disabled"style="margin-right: 5px;">HSK6</label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-2" style="width: 25%; float: left;">
+                                    <div class="card-body" style="padding: 10px;">
+                                        <h4 class="card-title">领域</h4>
+                                        <div class="basic-form">
+                                            <form>
+                                                <div class="form-group mb-2">
+                                                    <div class="radio mb-2">
+                                                        <label>
+                                                            <input number = "1" id = "rdo_tingli" type="radio" name="optradio"disabled="disabled" style="margin-right: 5px;">听力</label>
+                                                    </div>
+                                                    <div class="radio mb-2">
+                                                        <label>
+                                                            <input number = "2" id = "rdo_yuedu" type="radio" name="optradio" style="margin-right: 5px;">阅读</label>
+                                                    </div>
+                                                    <div class="radio disabled">
+                                                        <label>
+                                                            <input number = "3" id = "rdo_shuxie" type="radio" name="optradio" style="margin-right: 5px;">书写</label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-2" style="width: 25%; float: left;">
+                                    <div class="card-body" style="padding: 10px;">
+                                        <h4 class="card-title">部分</h4>
+                                        <div class="basic-form">
+                                            <form>
+                                                <div class="form-group mb-2">
+                                                    <div class="radio mb-2">
+                                                        <label>
+                                                            <input number = "1" id = "rdo_diyibufen" type="radio" name="optradio"style="margin-right: 5px;">1</label>
+                                                    </div>
+                                                    <div class="radio mb-2">
+                                                        <label>
+                                                            <input number = "2" id = "rdo_dierbufen" type="radio" name="optradio"style="margin-right: 5px;">2</label>
+                                                    </div>
+                                                    <div class="radio disabled">
+                                                        <label>
+                                                            <input number = "3" id = "rdo_disanbufen" type="radio" name="optradio"style="margin-right: 5px;">3</label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-2" style="width: 25%; float: left;">
+                                    <div class="card-body" style="padding: 10px;">
+                                        <h4 class="card-title">水平</h4>
+                                        <div class="basic-form">
+                                            <form>
+                                                <div class="form-group mb-2">
+                                                    <div class="radio mb-2">
+                                                        <label>
+                                                            <input number = "1" id = "rdo_shang"type="radio" name="optradio"style="margin-right: 5px;">上</label>
+                                                    </div>
+                                                    <div class="radio mb-2">
+                                                        <label>
+                                                            <input number = "2" id = "rdo_zhong"type="radio" name="optradio"style="margin-right: 5px;">中</label>
+                                                    </div>
+                                                    <div class="radio disabled">
+                                                        <label>
+                                                            <input number = "3" id = "rdo_xia"type="radio" name="optradio"style="margin-right: 5px;">下</label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="basic-form">
+                                <form>
+                                    <div class="form-row align-items-center" style="padding-left: 3%; padding-right: 3%;">
+                                        <div class="col-auto my-1" style="width: 100%;">
+                                            <button id="btn_aiGenerate" type="button" class="btn mb-1 btn-rounded btn-warning" style="width: 100%; color: white;">
+                                                           AI GENERATE
+                                            </button>
+                                            
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div id = "wenti411" class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK4 - 听力 - 第1部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti412"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK4 - 听力 - 第2部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti413"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK4 - 听力 - 第3部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti421"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK4 - 阅读 - 第1部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti422"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK4 - 阅读 - 第2部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti423"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK4 - 阅读 - 第3部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti431"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK4 - 书写 - 第1部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti432"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK4 - 书写 - 第2部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti511"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK5 - 听力 - 第1部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti512"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK5 - 听力 - 第2部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti521"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK5 - 阅读 - 第1部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti522"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK5 - 阅读 - 第2部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti523"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK5 - 阅读 - 第3部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti531"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK5 - 书写 - 第1部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti532"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK5 - 书写 - 第2部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti533"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    
+
+                                    <img id = "image-container" src="" height="40" width="40" alt="">
+                                        
+                                    </div> 
+
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK5 - 书写 - 第3部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti611"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK6 - 听力 - 第1部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti612"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK6 - 听力 - 第2部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti613"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK6 - 听力 - 第3部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti621"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK6 - 阅读 - 第1部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti622"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK6 - 阅读 - 第2部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti623"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK6 - 阅读 - 第3部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti624"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK6 - 阅读 - 第4部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id = "wenti631"class="basic-form hskwenti" style="display: none;">
+                                <form>
+                                    <div class="form-group" style="padding-left: 7px;padding-right: 7px;">
+                                        <label>HSK6 - 书写 - 第1部分</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" readonly>
+                                            第2部分第2部分第2部分第2部分第2部分第2部分
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+
+
+
+                            
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
 
                 <!-- 한자설명 유투브 모달창 -->
                 <div id ="pichanmocal" class="modal fade bd-example-modal-lg hanzipicture" tabindex="-1" role="dialog" aria-hidden="true">
@@ -812,6 +1207,13 @@
                         }*/
                     })
 
+                    // AI 클릭 이벤트
+                    $(document).on('click', '#hskAi' , function(){
+
+
+
+                    })        
+
                     //단어검색 클릭이벤트                   
                     $(document).on('click', '.hskyoutube' , function(){    
                         
@@ -1132,7 +1534,178 @@
                             }
                         }
 
-                        
+                        /* HSK AI 버튼 클릭시 분기처리 */
+                        $("#btn_aiGenerate").click(function(){ 
+                            if(!$("#rdo_hsk4").is(':checked') && !$("#rdo_hsk5").is(':checked') && !$("#rdo_hsk6").is(':checked') ){
+                                alert("HSK 급수를 선택해주세요");
+                                return false;
+                            }
+                            if(!$("#rdo_tingli").is(':checked') && !$("#rdo_yuedu").is(':checked') && !$("#rdo_shuxie").is(':checked') ){
+                                alert("시험영역을 선택해주세요");
+                                return false;
+                            }
+                            if(!$("#rdo_diyibufen").is(':checked') && !$("#rdo_dierbufen").is(':checked') && !$("#rdo_disanbufen").is(':checked') ){
+                                alert("파트를 선택해주세요");
+                                return false;
+                            }
+                            if(!$("#rdo_shang").is(':checked') && !$("#rdo_zhong").is(':checked') && !$("#rdo_xia").is(':checked') ){
+                                alert("레벨을 선택해주세요");
+                                return false;
+                            }
+                            
+                            var tagId = "wenti";
+
+                            debugger;
+                            if( $("#rdo_hsk4").is(':checked') ){
+                                tagId += "4";
+                            } else if( $("#rdo_hsk5").is(':checked') ){
+                                tagId += "5";
+                            } else if( $("#rdo_hsk6").is(':checked') ){
+                                tagId += "6";
+                            } 
+
+                            if( $("#rdo_tingli").is(':checked') ){
+                                tagId += "1";
+                            } else if( $("#rdo_yuedu").is(':checked') ){
+                                tagId += "2";
+                            } else if( $("#rdo_shuxie").is(':checked') ){
+                                tagId += "3";
+                            } 
+
+                            if( $("#rdo_diyibufen").is(':checked') ){
+                                tagId += "1";
+                            } else if( $("#rdo_dierbufen").is(':checked') ){
+                                tagId += "2";
+                            } else if( $("#rdo_disanbufen").is(':checked') ){
+                                tagId += "3";
+                            } 
+
+                           /* if( $("#rdo_shang").is(':checked') ){
+                                tagId += "1";
+                            } else if( $("#rdo_zhong").is(':checked') ){
+                                tagId += "2";
+                            } else if( $("#rdo_xia").is(':checked') ){
+                                tagId += "3";
+                            } */
+                            //alert(tagId);
+
+                            $(".hskwenti").hide();
+                            $("#" + tagId).show();
+                            switch (tagId) {
+                                            case "wenti411":
+                                                break;
+                                            case "wenti412":
+                                                break;    
+                                            case "wenti413":
+                                                break;    
+                                            case "wenti421":
+                                                break;    
+                                            case "wenti422":
+                                                break;
+                                            case "wenti423":
+                                                break;
+                                            case "wenti431":
+                                                break;
+                                            case "wenti432":
+                                                break;
+                                            case "wenti511":
+                                                break;
+                                            case "wenti512":
+                                                break;
+                                            case "wenti521":
+                                                break;
+                                            case "wenti522":        
+                                                break;
+                                            case "wenti523":        
+                                                break;    
+                                            case "wenti531":
+                                                break;
+                                            case "wenti532":        
+                                                break;
+                                            case "wenti533":       
+                                                searchImages();
+                                                break;    
+                                            case "wenti611":
+                                                break;
+                                            case "wenti612":        
+                                                break;
+                                            case "wenti613":        
+                                                break;                 
+                                            case "wenti621":
+                                                break;
+                                            case "wenti622":        
+                                                break;
+                                            case "wenti623":        
+                                                break;   
+                                            case "wenti624":        
+                                                break;
+                                            case "wenti631":        
+                                                break;        
+                                          default:
+                                            alert( "어떤 값인지 파악이 되지 않습니다." );
+                                        }
+
+                        });
+                        /*
+                        HSK4급 - 듣기 - 1      wenti411
+                        HSK4급 - 듣기 - 2      wenti412
+                        HSK4급 - 듣기 - 3      wenti413
+                        HSK4급 - 읽기 - 1      wenti421
+                        HSK4급 - 읽기 - 2      wenti422
+                        HSK4급 - 읽기 - 3      wenti423
+                        HSK4급 - 쓰기 - 1      wenti431
+                        HSK4급 - 쓰기 - 2      wenti432
+                        HSK5급 - 듣기 - 1      wenti511
+                        HSK5급 - 듣기 - 2      wenti512
+                        HSK5급 - 읽기 - 1      wenti521
+                        HSK5급 - 읽기 - 2      wenti522
+                        HSK5급 - 읽기 - 3      wenti523
+                        HSK5급 - 쓰기 - 1      wenti531
+                        HSK5급 - 쓰기 - 2      wenti532
+                        HSK5급 - 쓰기 - 3      wenti533
+                        HSK6급 - 듣기 - 1      wenti611
+                        HSK6급 - 듣기 - 2      wenti612
+                        HSK6급 - 듣기 - 3      wenti613
+                        HSK6급 - 읽기 - 1      wenti621
+                        HSK6급 - 읽기 - 2      wenti622
+                        HSK6급 - 읽기 - 3      wenti623
+                        HSK6급 - 읽기 - 4      wenti624
+                        HSK6급 - 쓰기 - 1      wenti631*/
+
+
+                        /* HSK 5급 랜덤이미지 */
+                        async function searchImages() {
+                            const query = "person," + hsk5zhaopian[Math.floor(Math.random() * hsk5zhaopian.length+ 1)];
+                            const accessKey = 'lj4SfECoEDiwxEuVM8djrzJSb6RMdqwJCqwqnAbluTs'; // Unsplash API 키 입력
+                            
+
+                            const url = `https://api.unsplash.com/search/photos?query=${query}&client_id=${accessKey}`;
+                            const response = await fetch(url);
+                            const data = await response.json();
+
+                            $("#image-container").attr("src",data.results[0].urls.small);
+
+                            //data.results[0].urls.small
+
+                            //const imageContainer = document.getElementById('image-container');
+                            //imageContainer.innerHTML = '';
+
+                            //const imgElement = document.createElement('img');
+                            //imgElement.src = data.results[0].urls.small;
+                            //imgElement.alt = data.results[0].alt_description;
+                            //imageContainer.appendChild(imgElement);
+
+                            /*
+                            const imageContainer = document.getElementById('image-container');
+                            imageContainer.innerHTML = '';
+                            
+                            data.results.forEach(photo => {
+                                const imgElement = document.createElement('img');
+                                imgElement.src = photo.urls.small;
+                                imgElement.alt = photo.alt_description;
+                                imageContainer.appendChild(imgElement);
+                            });*/
+                        }
                                           
             </script>
 

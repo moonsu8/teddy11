@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Teddy 중국어</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="./plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!-- Custom Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+                  <link href="css/bootstrap.css" rel="stylesheet" />
+              <link href="css/rotating-card.css" rel="stylesheet" />
+              <link href="https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- 추가건 -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159897918-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-159897918-1');
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
+    <style>
+        h1, h2, h3, h4, h5, a, p, span, li{
+              font-family: 'Jua', sans-serif;
+        }
+
+        .navbar-default .navbar-nav > li > a{
+        padding: 15px 15px;
+        margin: 5px 0;
+        }
+
+        .navbar-default{
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-color: transparent;
+            box-shadow: 0 0px 13px rgba(0,0,0,.2);
+        }
+        .btn-info,
+        .btn-info:hover,
+        .btn-info:focus{
+            color: #FFF !important;
+            background-color: #00bbff !important;
+            border-color: #00bbff !important;
+        }
+
+        .btn-info{
+            opacity: .8;
+            transition: all 0.1s;
+            -webkit-transition: all 0.1s;
+        }
+        .btn-info:hover,
+        .btn-info:focus{
+            opacity: 1;
+        }
+
+    </style>
+    <!-- 추가건 끝 -->
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+
+                       
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+
+        <!--모달1-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">비밀번호:</label>
+                                <input type="text" class="form-control" id="password" onkeypress="if( event.keyCode == 13 ){checkpassword();}">
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" id = "passcheck"class="btn btn-primary" num ="">비밀번호 체크</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>    
+
+
+
+
+
+    <div class="col-sm-10 col-sm-offset-1">
+        <!-- 김궁민 시작 -->
+        <div class="col-md-4 col-sm-6" style="height: 480px;">
+           <div class="card-container manual-flip">
+            <div class="card">
+                <div class="front"  style="height: 465px;">
+                    <div class="cover">
+                        <img src="images/rotating_card_thumb.png"/>
+                    </div>
+                    <div class="user">
+                        <img class="img-circle" src="images/rotating_card_profile2.png"/>
+                    </div>
+                    <div class="content">
+                        <div class="main">
+                            <h3 class="name">김파랑 님</h3>
+                            <p class="profession">초급반</p>
+                            <p class="text-center">"2020년 9월 ~ 현재"</p>
+                            <p class="text-center">"함께한 컨텐츠"</p>
+                            <div>
+                                 <img class="img-circle" style="width: 18%;" src="images/dianshiju/2.png"/>
+                                 <img class="img-circle" style="width: 18%;" src="images/dianshiju/1.png"/>
+                                 <img class="img-circle" style="width: 18%;" src="images/dianshiju/hsk4.png"/>
+                                 <img class="img-circle" style="width: 18%;" src="images/dianshiju/4.png"/>
+                                 <img class="img-circle" style="width: 18%;" src="images/dianshiju/5.png"/>   
+                            </div>    
+
+
+                        </div>
+                        <div class="footer">
+                            <button class="btn btn-simple" onclick="rotateCard(this)">
+                                <i class="fa fa-mail-forward"></i> 김파랑님 교실로 이동
+                            </button>
+                        </div>
+                    </div>
+                </div> <!-- end front panel -->
+                <div class="back" style="height: 465px;">
+                    <div class="header" style="margin: auto;">
+                        <h5 class="motto">"붉은색 버튼을 누르면 화면으로 이동합니다"</h5>
+                            </div>
+                    <div class="content">
+                        <div class="main">
+                           
+                            <!-- <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p> -->
+                            
+                            <div class="stats-container">
+                                <div class="stats" style="width: 49.999%;">
+                                    <p>[기초중국어]</p>
+                                    <h4>병음표듣기  <img class="img-circle" style="width: 5px;margin-bottom: 5px;" >
+                                        <i  ipId = "pinyin2" class="fa-brands fa-youtube ipId" style="color: red;"></i>
+                                    </h4>
+
+                                    <h4>병음반복듣기  <img class="img-circle" style="width: 5px;margin-bottom: 5px;" >
+                                        <i ipId = "pinyinautomp3" class="fa-brands fa-youtube ipId" style="color: red;"></i>
+                                    </h4>
+
+                                    <h4>병음퀴즈  <img class="img-circle" style="width: 15px;margin-bottom: 5px;" src="images/dianshiju/new.png"/>
+                                        <img class="img-circle" style="width: 5px;margin-bottom: 5px;" >
+                                        <i ipId = "pinyinquiz1" class="fa-brands fa-youtube ipId" style="color: red;"></i>
+                                    </h4>
+                                    <h4>기초공부   <img class="img-circle" style="width: 15px;margin-bottom: 5px;" src="images/dianshiju/new.png"/>
+                                        <img class="img-circle" style="width: 5px;margin-bottom: 5px;" >
+                                        <i ipId = "100tianmp3" class="fa-brands fa-youtube ipId" style="color: red;"></i>
+                                    </h4>
+
+                                </div>
+                                <div class="stats"style="width: 49.999%;">
+                                    <p>[HSK]</p>
+                                    <h4>HSK단어<img class="img-circle" style="width: 5px;margin-bottom: 5px;" >
+                                        <i ipId = "hskcidian" class="fa-brands fa-youtube  ipId" style="color: red;"></i>
+                                    </h4> 
+                                    <h4>HSK4 듣기 
+                                        <img class="img-circle" style="width: 5px;margin-bottom: 5px;" >
+                                        <i ipId = "" class="fa-brands fa-youtube  ipId" style="color: red;"></i>
+                                    </h4>
+                                    <h4>HSK4 읽기 
+                                        <img class="img-circle" style="width: 5px;margin-bottom: 5px;" >
+                                        <i ipId = "" class="fa-brands fa-youtube  ipId" style="color: red;"></i>
+                                    </h4>
+                                    <h4>HSK4 쓰기 
+                                        <img class="img-circle" style="width: 5px;margin-bottom: 5px;" >
+                                        <i ipId = "hskzuowen" class="fa-brands fa-youtube  ipId" style="color: red;"></i>
+                                    </h4>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="header" style="height: 50px; margin: auto;">
+                        <!-- <h5 class="motto">"파랑님께서 학습가능한 컨텐츠"</h5> -->
+                         <h4>Teddy쌤에게 질문!  
+                            <img class="img-circle" style="width: 10%;margin-bottom: 5px;" >
+                           <i id= "tosam2" class="fa-solid fa-envelope-open-text" style="color: blue;"></i>
+                        </h4>   
+                        
+
+                    </div>
+
+                    <div class="footer">
+                        <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                            <i class="fa fa-reply"></i> Back
+                        </button>
+                           <!--  <div class="social-links text-center">
+                                <a href="https://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                <a href="https://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                                <a href="https://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                            </div> -->
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div> <!-- end col sm 3 -->
+        <!-- 김궁민 끝 -->
+        <!-- 김궁민 시작 -->
+        <!-- 김궁민 끝 -->
+        <!-- 김궁민 시작 -->
+        <!-- 김궁민 끝 -->
+        <!-- 김궁민 시작 -->
+        <!-- 김궁민 끝 -->
+        <!-- 김궁민 시작 -->
+        <!-- 김궁민 끝 -->
+        <!-- 김궁민 시작 -->
+        <!-- 김궁민 끝 -->
+        <div class="col-md-4 col-sm-6">
+           <div class="card-container manual-flip">
+            <div class="card">
+                <div class="front">
+                    <div class="cover">
+                        <img src="images/rotating_card_thumb.png"/>
+                    </div>
+                    <div class="user">
+                        <img class="img-circle" src="images/rotating_card_profile2.png"/>
+                    </div>
+                    <div class="content">
+                        <div class="main">
+                            <h3 class="name">Andrew Mike</h3>
+                            <p class="profession">Web Developer</p>
+                            <p class="text-center">"Lamborghini Mercy <br>Your chick she so thirsty <br>I'm in that two seat Lambo"</p>
+                        </div>
+                        <div class="footer">
+                            <button class="btn btn-simple" onclick="rotateCard(this)">
+                                <i class="fa fa-mail-forward"></i> Manual Rotation
+                            </button>
+                        </div>
+                    </div>
+                </div> <!-- end front panel -->
+                <div class="back">
+                    <div class="header">
+                        <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                    </div>
+                    <div class="content">
+                        <div class="main">
+                            <h4 class="text-center">Job Description</h4>
+                            <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
+
+                            <div class="stats-container">
+                                <div class="stats">
+                                    <h4>235</h4>
+                                    <p>
+                                        Followers
+                                    </p>
+                                </div>
+                                <div class="stats">
+                                    <h4>114</h4>
+                                    <p>
+                                        Following
+                                    </p>
+                                </div>
+                                <div class="stats">
+                                    <h4>35</h4>
+                                    <p>
+                                        Projects
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                            <i class="fa fa-reply"></i> Back
+                        </button>
+                           <!--  <div class="social-links text-center">
+                                <a href="https://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                <a href="https://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                                <a href="https://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                            </div> -->
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div> <!-- end col sm 3 -->
+
+
+    </div> <!-- end col-sm-10 -->
+
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <!-- Chartjs -->
+    <script src="./plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="./plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- Datamap -->
+    <script src="./plugins/d3v3/index.js"></script>
+    <script src="./plugins/topojson/topojson.min.js"></script>
+    <script src="./plugins/datamaps/datamaps.world.min.js"></script>
+    <!-- Morrisjs -->
+    <script src="./plugins/raphael/raphael.min.js"></script>
+    <script src="./plugins/morris/morris.min.js"></script>
+    <!-- Pignose Calender -->
+    <script src="./plugins/moment/moment.min.js"></script>
+    <script src="./plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+    <!-- ChartistJS -->
+    <script src="./plugins/chartist/js/chartist.min.js"></script>
+    <script src="./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+
+
+    <script src="https://kit.fontawesome.com/fecf2d47ad.js" crossorigin="anonymous"></script>
+    <script src="./js/dashboard/dashboard-1.js"></script>
+
+    <script type="text/javascript">
+
+    var today = new Date();   
+
+    var year = String(today.getFullYear()); // 년도
+    var month = String(today.getMonth() + 1);  // 월
+    if(month.length < 2){
+        month = "0" + month;
+    }
+    var date = String(today.getDate());  // 날짜
+    if(date.length < 2){
+        date = "0" + date;
+    }
+    var fulldate = year + month+date;
+
+
+    
+    $(document).on('click', '.lesson_gogo' , function(){
+        location.href="http://naver.me/GEWoox7g";
+    });     
+
+
+    $(document).on('click', '.ipId' , function(){
+
+        $("#moveurl").attr("num",$(this).attr("ipId"));   
+
+        var a = "./" + $("#moveurl").attr("num") + ".html" ;  
+                    location.href = a;    
+
+                    }); 
+
+
+
+    $(document).on('click', '.page_to_nm' , function(){
+                        
+                    /*var a = "./" + $(this).attr("id") + ".html" ;
+                    $("#passcheck").attr("num",a);*/
+                     $("#moveurl").attr("num",$(this).attr("id"));    
+                    
+                    var a = "./" + $("#moveurl").attr("num") + ".html" ;  
+                    location.href = a;    
+
+                    }); 
+
+   /* $(document).on('click', '#passcheck' , function(){
+                        
+                    if( $("#password").val() == fulldate){
+                        var a = "./" + $(this).attr("num") + ".html" ;
+                        
+                        setTimeout(function() {
+                              location.href = a;
+                            }, 1200);
+
+                        
+                    }  else {
+                        alert("비밀번호를 확인해주세요.");
+                        return false;
+                    }
+                                    
+                    });*/
+
+    $(document).on('click', '#passcheck' , function(){
+                        
+                    switch($(this).attr("name")){
+                        case "ibtHsk": 
+
+                            if($("#cbHskLevel").val() == ""){
+                                alert("HSK 급수를 선택해주세요");
+                                return false;
+                            }
+
+                            if($("#fldStudentName").val() == ""){
+                                alert("수험번호를 적어주세요");
+                                return false;
+                            }
+
+                            if($("#fldStudentPass").val() == ""){
+                                alert("비밀번호를 적어주세요");
+                                return false;
+                            }
+
+                            var a = "./" + $("#cbHskLevel").val() + ".html" ;  
+                            location.href = a;
+                           
+
+                    }
+
+                    //if(checkpassword() == false){
+                     //   return;
+                    //}           
+    });
+                                    
+    $(document).on('click', '#moviecollection' , function(){
+                        
+                    location.href="./moviecollection.html";
+                        
+                    });
+
+    function checkpassword(){
+         if( $("#password").val() == fulldate){
+                    var a = "./" + $("#moveurl").attr("num") + ".html" ;  
+
+                    setTimeout(function() {
+                          location.href = a;
+                        }, 1500);
+
+                        
+                    }  else {
+                        alert("비밀번호를 확인해주세요.");
+                        return false;
+                    }
+
+    }
+
+/*   function enterkey() {
+         if (window.event.keyCode == 13) { 
+            checkpassword();
+        }
+    }*/
+
+    function rotateCard(btn){
+        var $card = $(btn).closest('.card-container');
+        console.log($card);
+        if($card.hasClass('hover')){
+            $card.removeClass('hover');
+        } else {
+            $card.addClass('hover');
+        }
+    }
+
+    function checkMobile(){
+        var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
+        if ( varUA.indexOf('android') > -1) {
+            //안드로이드
+            return "android";
+        } else if ( varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ) {
+            //IOS
+            return "ios";
+        } else {
+            //아이폰, 안드로이드 외
+            return "other";
+        }
+    }
+
+    function checkM2(m){
+        var classnum = $('.jieshi').length;
+        var message = "질문내용  " + ":";
+
+        location.href = 'sms:' +'01056477662'+(m == 'ios' ? '&' : '?') + 'body='+ encodeURIComponent(message);
+    }
+            
+    $("#tosam2").click(function(){
+
+       checkM2(checkMobile());
+    })
+
+
+</script>
+
+</body>
+
+</html>
